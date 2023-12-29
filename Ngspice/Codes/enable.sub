@@ -1,0 +1,15 @@
+.include AND.sub
+
+.subckt enable node_enable node_a0 node_a1 node_a2 node_a3 node_b0 node_b1 node_b2 node_b3 node_c0 node_c1 node_c2 node_c3 node_c4 node_c5 node_c6 node_c7 vdd gnd
+
+X1 node_a0 node_enable node_c0 vdd gnd AND
+X2 node_a1 node_enable node_c1 vdd gnd AND
+X3 node_a2 node_enable node_c2 vdd gnd AND
+X4 node_a3 node_enable node_c3 vdd gnd AND
+X5 node_b0 node_enable node_c4 vdd gnd AND
+X6 node_b1 node_enable node_c5 vdd gnd AND
+X7 node_b2 node_enable node_c6 vdd gnd AND
+X8 node_b3 node_enable node_c7 vdd gnd AND
+C1 node_out gnd 100f
+
+.ends enable

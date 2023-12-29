@@ -1,0 +1,11 @@
+.include NOR.sub
+.include NOT.sub
+
+.subckt OR node_a node_b node_out vdd gnd
+
+X1 node_a node_b node_c vdd gnd NOR
+X2 node_c node_out vdd gnd NOT
+
+C1 node_out gnd 100f
+
+.ends OR

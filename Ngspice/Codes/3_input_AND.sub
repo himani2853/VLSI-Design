@@ -1,0 +1,9 @@
+.include 3_input_NAND.sub
+.subckt 3_input_AND node_a node_b node_c node_out_final vdd gnd
+
+X1 node_a node_b node_c node_out vdd gnd 3_input_NAND
+X5 node_out node_out_final vdd gnd NOT
+
+C1 node_out gnd 100f
+
+.ends 3_input_AND

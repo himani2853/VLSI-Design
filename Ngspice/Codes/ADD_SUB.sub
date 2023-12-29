@@ -1,0 +1,22 @@
+.include XOR.sub
+.include FA.sub
+
+.subckt ADD_SUB node_m node_a0 node_a1 node_a2 node_a3 node_b0 node_b1 node_b2 node_b3 node_s0 node_s1 node_s2 node_s3 node_c_final vdd gnd
+
+X1 node_b0 node_m node_b0_in vdd gnd XOR
+X2 node_b1 node_m node_b1_in vdd gnd XOR
+X3 node_b2 node_m node_b2_in vdd gnd XOR
+X4 node_b3 node_m node_b3_in vdd gnd XOR
+
+X5 node_a0 node_b0_in node_m node_c1 node_s0 vdd gnd FA
+X6 node_a1 node_b1_in node_c1 node_c2 node_s1 vdd gnd FA
+X7 node_a2 node_b2_in node_c2 node_c3 node_s2 vdd gnd FA
+X8 node_a3 node_b3_in node_c3 node_c4 node_s3 vdd gnd FA
+X9 node_c4 node_m node_c_final vdd gnd XOR
+* X9_1 node_c4 node_c4_final vdd gnd NOT
+* X9_2 node_c4_final node_m node_c_final vdd gnd AND
+
+C1 node_out gnd 100f
+
+.ends ADD_SUB
+

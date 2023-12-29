@@ -1,0 +1,12 @@
+.include AND.sub
+
+.subckt AND_final node_a0 node_a1 node_a2 node_a3 node_b0 node_b1 node_b2 node_b3 node_c0 node_c1 node_c2 node_c3 vdd gnd
+
+X1 node_a0 node_b0 node_c0 vdd gnd AND
+X2 node_a1 node_b1 node_c1 vdd gnd AND
+X3 node_a2 node_b2 node_c2 vdd gnd AND
+X4 node_a3 node_b3 node_c3 vdd gnd AND
+
+C1 node_out gnd 100f
+
+.ends AND_final

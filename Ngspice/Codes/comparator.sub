@@ -1,0 +1,54 @@
+.include NAND.sub
+.include NOT.sub
+.include AND.sub
+.include OR.sub
+.include XNOR.sub
+.include XOR.sub
+.include 4_input_AND.sub
+.include 4_input_OR.sub
+.include 3_input_AND.sub
+.include 5_input_AND.sub
+
+.subckt comparator node_a0 node_a1 node_a2 node_a3 node_b0 node_b1 node_b2 node_b3 node_equal_final node_ALB_final node_AGB_final vdd gnd
+
+* A=B
+X1 node_a0 node_b0 node_c0_e vdd gnd XNOR
+X2 node_a1 node_b1 node_c1_e vdd gnd XNOR
+X3 node_a2 node_b2 node_c2_e vdd gnd XNOR
+X4 node_a3 node_b3 node_c3_e vdd gnd XNOR
+X5 node_c0_e node_c1_e node_c2_e node_c3_e node_equal_final vdd gnd 4_input_AND 
+
+* A<B
+X6 node_a3 node_a3_not vdd gnd NOT
+X7 node_b3 node_a3_not node_c3_l vdd gnd AND
+
+X8 node_a2 node_a2_not vdd gnd NOT
+X9 node_a2_not node_b2 node_c3_e node_c2_l vdd gnd 3_input_AND
+
+X10 node_a1 node_a1_not vdd gnd NOT
+X11 node_b1 node_a1_not node_c3_e node_c2_e node_c1_l vdd gnd 4_input_AND
+
+X12 node_a0 node_a0_not vdd gnd NOT
+X13 node_b0 node_a0_not node_c3_e node_c2_e node_c1_e node_c0_l vdd gnd 5_input_AND
+
+X14 node_c0_l node_c1_l node_c2_l node_c3_l node_ALB_final vdd gnd 4_input_OR
+
+* A>B
+X15 node_b3 node_b3_not vdd gnd NOT
+X16 node_a3 node_b3_not node_c3_g vdd gnd AND
+
+X17 node_b2 node_b2_not vdd gnd NOT
+X18 node_b2_not node_a2 node_c3_e node_c2_g vdd gnd 3_input_AND
+
+X19 node_b1 node_b1_not vdd gnd NOT
+X20 node_a1 node_b1_not node_c3_e node_c2_e node_c1_g vdd gnd 4_input_AND
+
+X21 node_b0 node_b0_not vdd gnd NOT
+X22 node_a0 node_b0_not node_c3_e node_c2_e node_c1_e node_c0_g vdd gnd 5_input_AND
+
+X23 node_c0_g node_c1_g node_c2_g node_c3_g node_AGB_final vdd gnd 4_input_OR
+
+C1 node_out gnd 100f
+
+.ends comparator
+

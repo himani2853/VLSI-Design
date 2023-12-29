@@ -1,0 +1,10 @@
+.include 4_input_NOR.sub
+.include NOT.sub
+.subckt 4_input_OR node_a node_b node_c node_d node_out_final vdd gnd
+
+X1 node_a node_b node_c node_d node_out vdd gnd 4_input_NOR
+X5 node_out node_out_final vdd gnd NOT
+
+C1 node_out gnd 100f
+
+.ends 3_input_OR

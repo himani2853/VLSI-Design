@@ -1,0 +1,124 @@
+.include TSMC_180nm.txt
+.include NAND.sub
+.include NOT.sub
+.include AND.sub
+.include OR.sub
+.include XOR.sub
+.include XNOR.sub
+.include 4_input_AND.sub
+.include 4_input_OR.sub
+.include 3_input_AND.sub
+.include 5_input_AND.sub
+.include FA.sub
+.include decoder.sub
+.include enable.sub
+.include ADD_SUB.sub
+.include comparator.sub
+.include AND_final.sub
+
+
+
+.param SUPPLY = 1.8
+.param LAMBDA = 0.18u
+
+.param wn1 = {10*LAMBDA}
+.param wn2 = {10*LAMBDA}
+.param ln1 = {2*LAMBDA}
+.param ln2 = {2*LAMBDA}
+
+.param wp1 = wn1
+.param wp2 = wn1
+.param lp1 = {LAMBDA}
+.param lp2 = {LAMBDA}
+
+.global gnd
+
+Vdd node_x gnd 'SUPPLY'
+
+* V_in_S0 node_S0 gnd PULSE(0 1.8 50ns 100ps 100ps 50ns 100ns)
+* V_in_S1 node_S1 gnd PULSE(0 1.8 100ns 100ps 100ps 100ns 200ns)
+
+V_in_S1 node_S1 gnd DC 0
+V_in_S0 node_S0 gnd DC 1.8
+
+V_in_a0 node_a0 gnd PULSE(0 1.8 50ns 100ps 100ps 50ns 100ns)
+V_in_a1 node_a1 gnd PULSE(0 1.8 100ns 100ps 100ps 100ns 200ns)
+V_in_a2 node_a2 gnd PULSE(0 1.8 200ns 100ps 100ps 200ns 400ns)
+V_in_a3 node_a3 gnd PULSE(0 1.8 400ns 100ps 100ps 500ns 1000ns)
+
+V_in_m node_m gnd PULSE(0 1.8 400ns 100ps 100ps 400ns 800ns)
+V_in_m_add node_m_add gnd DC 0
+V_in_m_sub node_m_sub gnd DC 1
+
+V_in_b0 node_b0 gnd PULSE(0 1.8 50ns 100ps 100ps 50ns 100ns)
+V_in_b1 node_b1 gnd PULSE(0 1.8 100ns 100ps 100ps 100ns 200ns)
+V_in_b2 node_b2 gnd PULSE(0 1.8 200ns 100ps 100ps 200ns 400ns)
+V_in_b3 node_b3 gnd PULSE(0 1.8 400ns 100ps 100ps 500ns 1000ns)
+
+* V_in_b0 node_b0 gnd PULSE(0 1.8 0ns 100ps 100ps 80ns 160ns)
+* V_in_b1 node_b1 gnd PULSE(0 1.8 0ns 100ps 100ps 70ns 140ns)
+* V_in_b2 node_b2 gnd PULSE(0 1.8 0ns 100ps 100ps 60ns 120ns)
+* V_in_b3 node_b3 gnd PULSE(0 1.8 0ns 100ps 100ps 50ns 100ns)
+
+
+* DECODER
+X1 node_S0 node_S1 node_D0 node_D1 node_D2 node_D3 node_x gnd decoder
+
+
+* ENABLE
+X2 node_D0 node_a0 node_a1 node_a2 node_a3 node_b0 node_b1 node_b2 node_b3 node_D0_a0 node_D0_a1 node_D0_a2 node_D0_a3 node_D0_b0 node_D0_b1 node_D0_b2 node_D0_b3 node_x gnd enable
+
+X3 node_D1 node_a0 node_a1 node_a2 node_a3 node_b0 node_b1 node_b2 node_b3 node_D1_a0 node_D1_a1 node_D1_a2 node_D1_a3 node_D1_b0 node_D1_b1 node_D1_b2 node_D1_b3 node_x gnd enable
+
+X4 node_D2 node_a0 node_a1 node_a2 node_a3 node_b0 node_b1 node_b2 node_b3 node_D2_a0 node_D2_a1 node_D2_a2 node_D2_a3 node_D2_b0 node_D2_b1 node_D2_b2 node_D2_b3 node_x gnd enable
+
+X5 node_D3 node_a0 node_a1 node_a2 node_a3 node_b0 node_b1 node_b2 node_b3 node_D3_a0 node_D3_a1 node_D3_a2 node_D3_a3 node_D3_b0 node_D3_b1 node_D3_b2 node_D3_b3 node_x gnd enable
+
+
+* ADD-SUB
+X6 node_m_add node_D0_a0 node_D0_a1 node_D0_a2 node_D0_a3 node_D0_b0 node_D0_b1 node_D0_b2 node_D0_b3 node_s0_add node_s1_add node_s2_add node_s3_add node_c_final_carry node_x gnd ADD_SUB
+
+X7 node_m_sub node_D1_a0 node_D1_a1 node_D1_a2 node_D1_a3 node_D1_b0 node_D1_b1 node_D1_b2 node_D1_b3 node_s0_sub node_s1_sub node_s2_sub node_s3_sub node_c_final_borrow node_x gnd ADD_SUB
+
+* COMPARATOR
+X8 node_D2_a0 node_D2_a1 node_D2_a2 node_D2_a3 node_D2_b0 node_D2_b1 node_D2_b2 node_D2_b3 node_equal_final node_ALB_final node_AGB_final node_x gnd comparator
+X8_1 node_equal_final node_D2 node_equal_final_ans node_x gnd AND
+X8_2 node_ALB_final node_D2 node_ALB_final_ans node_x gnd AND
+X8_3 node_AGB_final node_D2 node_AGB_final_ans node_x gnd AND
+
+* AND
+X9 node_D3_a0 node_D3_a1 node_D3_a2 node_D3_a3 node_D3_b0 node_D3_b1 node_D3_b2 node_D3_b3 node_c0_and node_c1_and node_c2_and node_c3_and node_x gnd AND_final
+
+C1 node_out gnd 100f
+
+.tran 1n 800n
+
+.control
+run
+set color0 = rgb:f/f/e
+set color1 = white
+* plot v(node_S0) v(node_S1)+2 
+* plot v(node_D0) v(node_D1)+2 v(node_D2)+4 v(node_D3)+6
+plot v(node_a0) v(node_a1)+2 v(node_a2)+4 v(node_a3)+6
+plot v(node_b0) v(node_b1)+2 v(node_b2)+4 v(node_b3)+6
+* plot v(node_D0_a0) v(node_D0_a1)+2 v(node_D0_a2)+4 v(node_D0_a3)+6 v(node_D0)+8
+* plot v(node_D0_b0) v(node_D0_b1)+2 v(node_D0_b2)+4 v(node_D0_b3)+6
+* plot v(node_D1_a0) v(node_D1_a1)+2 v(node_D1_a2)+4 v(node_D1_a3)+6 v(node_D1)+8
+* plot v(node_D1_b0) v(node_D1_b1)+2 v(node_D1_b2)+4 v(node_D1_b3)+6
+* plot v(node_D2_a0) v(node_D2_a1)+2 v(node_D2_a2)+4 v(node_D2_a3)+6 v(node_D2)+8
+* plot v(node_D2_b0) v(node_D2_b1)+2 v(node_D2_b2)+4 v(node_D2_b3)+6
+* plot v(node_D3_a0) v(node_D3_a1)+2 v(node_D3_a2)+4 v(node_D3_a3)+6 v(node_D3)+8
+* plot v(node_D3_b0) v(node_D3_b1)+2 v(node_D3_b2)+4 v(node_D3_b3)+6
+plot v(node_s0_add) v(node_s1_add)+2 v(node_s2_add)+4 v(node_s3_add)+6 v(node_c_final_carry)+8 v(node_S0)+10 v(node_S1)+12 
+plot v(node_s0_sub) v(node_s1_sub)+2 v(node_s2_sub)+4 v(node_s3_sub)+6 v(node_c_final_borrow)+8
+* plot v(node_equal_final) v(node_ALB_final)+2 v(node_AGB_final)+4
+* plot v(node_equal_final_ans) v(node_ALB_final_ans)+2 v(node_AGB_final_ans)+4 v(node_D2)+6
+* plot v(node_c0_and) v(node_c1_and)+2 v(node_c2_and)+4 v(node_c3_and)+6
+* hardcopy image.ps  v(node_c0_and) v(node_c1_and)+2 v(node_c2_and)+4 v(node_c3_and)+6
+.end
+.endc
+
+
+
+
+
