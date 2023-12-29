@@ -1,0 +1,89 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 9;
+:vpi_module "C:\Users\3008h\Desktop\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\Users\3008h\Desktop\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\Users\3008h\Desktop\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\Users\3008h\Desktop\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\Users\3008h\Desktop\iverilog\lib\ivl\va_math.vpi";
+S_00000224d22ec6f0 .scope module, "and_testbench" "and_testbench" 2 4;
+ .timescale -9 -9;
+v00000224d21f16c0_0 .var "A", 3 0;
+v00000224d21f2e80_0 .var "B", 3 0;
+v00000224d21f1da0_0 .net "T", 3 0, L_00000224d21f1ee0;  1 drivers
+S_00000224d22ec880 .scope module, "call1" "and_gate" 2 9, 3 1 0, S_00000224d22ec6f0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 4 "T";
+    .port_info 1 /INPUT 4 "A";
+    .port_info 2 /INPUT 4 "B";
+L_00000224d22e6dd0 .functor AND 1, L_00000224d21f2340, L_00000224d21f1e40, C4<1>, C4<1>;
+L_00000224d22ebe40 .functor AND 1, L_00000224d21f3060, L_00000224d21f14e0, C4<1>, C4<1>;
+L_00000224d22e69e0 .functor AND 1, L_00000224d21f2660, L_00000224d21f2160, C4<1>, C4<1>;
+L_00000224d21f3a30 .functor AND 1, L_00000224d21f22a0, L_00000224d21f1620, C4<1>, C4<1>;
+v00000224d21e4f30_0 .net "A", 3 0, v00000224d21f16c0_0;  1 drivers
+v00000224d21e4ad0_0 .net "B", 3 0, v00000224d21f2e80_0;  1 drivers
+v00000224d21e4cb0_0 .net "T", 3 0, L_00000224d21f1ee0;  alias, 1 drivers
+v00000224d21e5570_0 .net *"_ivl_0", 0 0, L_00000224d22e6dd0;  1 drivers
+v00000224d21e4d50_0 .net *"_ivl_11", 0 0, L_00000224d21f14e0;  1 drivers
+v00000224d21e4990_0 .net *"_ivl_12", 0 0, L_00000224d22e69e0;  1 drivers
+v00000224d21e48f0_0 .net *"_ivl_15", 0 0, L_00000224d21f2660;  1 drivers
+v00000224d21e5250_0 .net *"_ivl_17", 0 0, L_00000224d21f2160;  1 drivers
+v00000224d21e4710_0 .net *"_ivl_18", 0 0, L_00000224d21f3a30;  1 drivers
+v00000224d21e52f0_0 .net *"_ivl_22", 0 0, L_00000224d21f22a0;  1 drivers
+v00000224d21e5390_0 .net *"_ivl_24", 0 0, L_00000224d21f1620;  1 drivers
+v00000224d21e47b0_0 .net *"_ivl_3", 0 0, L_00000224d21f2340;  1 drivers
+v00000224d21e4c10_0 .net *"_ivl_5", 0 0, L_00000224d21f1e40;  1 drivers
+v00000224d21f31a0_0 .net *"_ivl_6", 0 0, L_00000224d22ebe40;  1 drivers
+v00000224d21f2200_0 .net *"_ivl_9", 0 0, L_00000224d21f3060;  1 drivers
+L_00000224d21f2340 .part v00000224d21f16c0_0, 0, 1;
+L_00000224d21f1e40 .part v00000224d21f2e80_0, 0, 1;
+L_00000224d21f3060 .part v00000224d21f16c0_0, 1, 1;
+L_00000224d21f14e0 .part v00000224d21f2e80_0, 1, 1;
+L_00000224d21f2660 .part v00000224d21f16c0_0, 2, 1;
+L_00000224d21f2160 .part v00000224d21f2e80_0, 2, 1;
+L_00000224d21f1ee0 .concat8 [ 1 1 1 1], L_00000224d22e6dd0, L_00000224d22ebe40, L_00000224d22e69e0, L_00000224d21f3a30;
+L_00000224d21f22a0 .part v00000224d21f16c0_0, 3, 1;
+L_00000224d21f1620 .part v00000224d21f2e80_0, 3, 1;
+    .scope S_00000224d22ec6f0;
+T_0 ;
+    %vpi_call 2 17 "$dumpfile", "and_testbench.vcd" {0 0 0};
+    %vpi_call 2 18 "$dumpvars", 32'sb00000000000000000000000000000000, S_00000224d22ec6f0 {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_00000224d22ec6f0;
+T_1 ;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v00000224d21f16c0_0, 0, 4;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v00000224d21f2e80_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 4;
+    %store/vec4 v00000224d21f16c0_0, 0, 4;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v00000224d21f2e80_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 4;
+    %store/vec4 v00000224d21f16c0_0, 0, 4;
+    %pushi/vec4 1, 0, 4;
+    %store/vec4 v00000224d21f2e80_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 11, 0, 4;
+    %store/vec4 v00000224d21f16c0_0, 0, 4;
+    %pushi/vec4 9, 0, 4;
+    %store/vec4 v00000224d21f2e80_0, 0, 4;
+    %delay 10, 0;
+    %vpi_call 2 37 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+    .scope S_00000224d22ec6f0;
+T_2 ;
+    %vpi_call 2 41 "$monitor", " A = %b", v00000224d21f16c0_0, " B = %b", v00000224d21f2e80_0, " AND = %b", v00000224d21f1da0_0 {0 0 0};
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    ".\and_testbench.v";
+    "./and.v";

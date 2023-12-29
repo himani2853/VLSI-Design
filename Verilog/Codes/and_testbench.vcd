@@ -1,0 +1,48 @@
+$date
+	Tue Nov 07 14:47:11 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module and_testbench $end
+$var wire 4 ! T [3:0] $end
+$var reg 4 " A [3:0] $end
+$var reg 4 # B [3:0] $end
+$scope module call1 $end
+$var wire 4 $ A [3:0] $end
+$var wire 4 % B [3:0] $end
+$var wire 4 & T [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 &
+b0 %
+b0 $
+b0 #
+b0 "
+b0 !
+$end
+#10
+b1 "
+b1 $
+#20
+b1 !
+b1 &
+b1 #
+b1 %
+#30
+b1001 !
+b1001 &
+b1001 #
+b1001 %
+b1011 "
+b1011 $
+#40

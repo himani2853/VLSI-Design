@@ -1,0 +1,194 @@
+$date
+	Tue Nov 07 14:32:27 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module add_sub_testbench $end
+$var wire 4 ! S [3:0] $end
+$var wire 1 " C_final $end
+$var reg 4 # A [3:0] $end
+$var reg 4 $ B [3:0] $end
+$var reg 1 % M $end
+$scope module call1 $end
+$var wire 4 & A [3:0] $end
+$var wire 4 ' B [3:0] $end
+$var wire 1 " C_final $end
+$var wire 1 % M $end
+$var wire 1 ( t0 $end
+$var wire 1 ) t1 $end
+$var wire 1 * t2 $end
+$var wire 1 + t3 $end
+$var wire 3 , c_inc [2:0] $end
+$var wire 4 - S [3:0] $end
+$var wire 1 . C_out $end
+$scope module FA0 $end
+$var wire 1 / A $end
+$var wire 1 ( B $end
+$var wire 1 % C_IN $end
+$var wire 1 0 C_OUT $end
+$var wire 1 1 SUM $end
+$var wire 1 2 t0 $end
+$var wire 1 3 t1 $end
+$var wire 1 4 t2 $end
+$upscope $end
+$scope module FA1 $end
+$var wire 1 5 A $end
+$var wire 1 ) B $end
+$var wire 1 6 C_IN $end
+$var wire 1 7 C_OUT $end
+$var wire 1 8 SUM $end
+$var wire 1 9 t0 $end
+$var wire 1 : t1 $end
+$var wire 1 ; t2 $end
+$upscope $end
+$scope module FA2 $end
+$var wire 1 < A $end
+$var wire 1 * B $end
+$var wire 1 = C_IN $end
+$var wire 1 > C_OUT $end
+$var wire 1 ? SUM $end
+$var wire 1 @ t0 $end
+$var wire 1 A t1 $end
+$var wire 1 B t2 $end
+$upscope $end
+$scope module FA3 $end
+$var wire 1 C A $end
+$var wire 1 + B $end
+$var wire 1 D C_IN $end
+$var wire 1 . C_OUT $end
+$var wire 1 E SUM $end
+$var wire 1 F t0 $end
+$var wire 1 G t1 $end
+$var wire 1 H t2 $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+0H
+0G
+0F
+0E
+0D
+0C
+0B
+0A
+0@
+0?
+0>
+0=
+0<
+0;
+0:
+09
+08
+07
+06
+05
+04
+03
+12
+11
+00
+1/
+0.
+b1 -
+b0 ,
+0+
+0*
+0)
+0(
+b0 '
+b1 &
+0%
+b0 $
+b1 #
+0"
+b1 !
+$end
+#10
+18
+16
+b10 !
+b10 -
+01
+b1 ,
+10
+02
+14
+1(
+b1 $
+b1 '
+#20
+1?
+1=
+b11 ,
+17
+1;
+b110 !
+b110 -
+18
+0:
+1)
+09
+15
+b11 $
+b11 '
+b11 #
+b11 &
+#30
+1?
+1G
+16
+1=
+1D
+1F
+13
+10
+18
+0:
+17
+b111 ,
+1>
+1.
+12
+04
+09
+1;
+1B
+0H
+1<
+1C
+0(
+1)
+1*
+0+
+0"
+b110 !
+b110 -
+01
+b1001 $
+b1001 '
+b1111 #
+b1111 &
+1%
+#40
+1"
+0.
+b1110 !
+b1110 -
+1E
+0G
+0F
+0C
+b111 #
+b111 &
+#50
