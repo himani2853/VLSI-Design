@@ -1,0 +1,42 @@
+tpd                 =  5.16510e-10 input = INPUT_ALU_A0 output = ADDER_SUB_S0
+tpd                 =  5.13912e-10 input = INPUT_ALU_A0 output = ADDER_SUB_S1
+tpd                 =  5.19215e-10 input = INPUT_ALU_A0 output = ADDER_SUB_S2
+tpd                 =  5.10319e-10 input = INPUT_ALU_A0 output = ADDER_SUB_S3
+
+tpd                 =  5.16510e-10 input = INPUT_ALU_A1 output = ADDER_SUB_S0
+tpd                 =  5.13912e-10 input = INPUT_ALU_A1 output = ADDER_SUB_S1
+tpd                 =  5.19215e-10 input = INPUT_ALU_A1 output = ADDER_SUB_S2
+tpd                 =  5.10319e-10 input = INPUT_ALU_A1 output = ADDER_SUB_S3
+
+tpd                 =  5.16510e-10 input = INPUT_ALU_A2 output = ADDER_SUB_S0
+tpd                 =  5.13912e-10 input = INPUT_ALU_A2 output = ADDER_SUB_S1
+tpd                 =  5.19215e-10 input = INPUT_ALU_A2 output = ADDER_SUB_S2
+tpd                 =  5.10319e-10 input = INPUT_ALU_A2 output = ADDER_SUB_S3
+
+tpd                 =  5.16510e-10 input = INPUT_ALU_A3 output = ADDER_SUB_S0
+tpd                 =  5.13912e-10 input = INPUT_ALU_A3 output = ADDER_SUB_S1
+tpd                 =  5.19215e-10 input = INPUT_ALU_A3 output = ADDER_SUB_S2
+tpd                 =  5.10319e-10 input = INPUT_ALU_A3 output = ADDER_SUB_S3
+
+tpd                 =  7.85060e-10 input = INPUT_ALU_B0 output = ADDER_SUB_S0
+tpd                 =  7.63825e-10 input = INPUT_ALU_B0 output = ADDER_SUB_S1
+tpd                 =  7.99750e-10 input = INPUT_ALU_B0 output = ADDER_SUB_S2
+tpd                 =  7.17826e-10 input = INPUT_ALU_B0 output = ADDER_SUB_S3
+
+tpd                 =  7.85060e-10 input = INPUT_ALU_B1 output = ADDER_SUB_S0
+tpd                 =  7.63825e-10 input = INPUT_ALU_B1 output = ADDER_SUB_S1
+tpd                 =  7.99750e-10 input = INPUT_ALU_B1 output = ADDER_SUB_S2
+tpd                 =  7.17826e-10 input = INPUT_ALU_B1 output = ADDER_SUB_S3
+
+tpd                 =  7.85060e-10 input = INPUT_ALU_B2 output = ADDER_SUB_S0
+tpd                 =  7.63825e-10 input = INPUT_ALU_B2 output = ADDER_SUB_S1
+tpd                 =  7.99750e-10 input = INPUT_ALU_B2 output = ADDER_SUB_S2
+tpd                 =  7.17826e-10 input = INPUT_ALU_B2 output = ADDER_SUB_S3
+
+tpd                 =  7.85060e-10 input = INPUT_ALU_B3 output = ADDER_SUB_S0
+tpd                 =  7.63825e-10 input = INPUT_ALU_B3 output = ADDER_SUB_S1
+tpd                 =  7.99750e-10 input = INPUT_ALU_B3 output = ADDER_SUB_S2
+tpd                 =  7.17826e-10 input = INPUT_ALU_B3 output = ADDER_SUB_S3
+
+
+

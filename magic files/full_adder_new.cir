@@ -1,0 +1,223 @@
+* SPICE3 file created from full_adder.ext - technology: scmos
+.include TSMC_180nm.txt
+
+
+.param SUPPLY = 1.8
+
+
+.global GND
+
+Vdd VDD GND 'SUPPLY'
+.option scale=0.09u
+
+V_in_A A gnd PULSE(0 1.8 0ns 100ps 100ps 100ns 200ns)
+V_in_B B gnd PULSE(0 1.8 0ns 100ps 100ps 50ns 100ns)
+V_in_C C_IN gnd PULSE(0 1.8 0ns 100ps 100ps 250ns 500ns)
+.option scale=0.09u
+
+M1000 VDD B q1d_2_INPUT_XOR_0/BBAR q1d_2_INPUT_XOR_0/w_12_2# CMOSP w=4 l=2
++  ad=332 pd=260 as=24 ps=20
+M1001 AXORB q1d_2_INPUT_XOR_0/BBAR q1d_2_INPUT_XOR_0/ABAR q1d_2_INPUT_XOR_0/w_53_n17# CMOSP w=4 l=3
++  ad=76 pd=62 as=44 ps=38
+M1002 q1d_2_INPUT_XOR_0/BBAR B GND Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=280 ps=226
+M1003 VDD A q1d_2_INPUT_XOR_0/ABAR q1d_2_INPUT_XOR_0/w_n34_1# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1004 AXORB B A q1d_2_INPUT_XOR_0/w_52_34# CMOSP w=4 l=3
++  ad=0 pd=0 as=24 ps=20
+M1005 q1d_2_INPUT_XOR_0/ABAR A GND Gnd CMOSN w=4 l=2
++  ad=44 pd=38 as=0 ps=0
+M1006 AXORB q1d_2_INPUT_XOR_0/BBAR A Gnd CMOSN w=4 l=3
++  ad=72 pd=60 as=24 ps=20
+M1007 AXORB B q1d_2_INPUT_XOR_0/ABAR Gnd CMOSN w=4 l=3
++  ad=0 pd=0 as=0 ps=0
+M1008 VDD C_IN q1d_2_INPUT_XOR_1/BBAR q1d_2_INPUT_XOR_1/w_12_2# CMOSP w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1009 SUM_A_XOR_B_XOR_C q1d_2_INPUT_XOR_1/BBAR q1d_2_INPUT_XOR_1/ABAR q1d_2_INPUT_XOR_1/w_53_n17# CMOSP w=4 l=3
++  ad=52 pd=42 as=44 ps=38
+M1010 q1d_2_INPUT_XOR_1/BBAR C_IN GND Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1011 VDD AXORB q1d_2_INPUT_XOR_1/ABAR q1d_2_INPUT_XOR_1/w_n34_1# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1012 SUM_A_XOR_B_XOR_C C_IN AXORB q1d_2_INPUT_XOR_1/w_52_34# CMOSP w=4 l=3
++  ad=0 pd=0 as=0 ps=0
+M1013 q1d_2_INPUT_XOR_1/ABAR AXORB GND Gnd CMOSN w=4 l=2
++  ad=44 pd=38 as=0 ps=0
+M1014 SUM_A_XOR_B_XOR_C q1d_2_INPUT_XOR_1/BBAR AXORB Gnd CMOSN w=4 l=3
++  ad=48 pd=40 as=0 ps=0
+M1015 SUM_A_XOR_B_XOR_C C_IN q1d_2_INPUT_XOR_1/ABAR Gnd CMOSN w=4 l=3
++  ad=0 pd=0 as=0 ps=0
+M1016 2_input_OR_0/OUT 2_input_OR_0/A GND Gnd CMOSN w=4 l=2
++  ad=40 pd=28 as=0 ps=0
+M1017 2_input_OR_0/a_n7_22# 2_input_OR_0/A VDD 2_input_OR_0/w_n23_15# CMOSP w=4 l=2
++  ad=40 pd=28 as=0 ps=0
+M1018 C_OUT 2_input_OR_0/OUT VDD 2_input_OR_0/w_30_15# CMOSP w=5 l=2
++  ad=40 pd=26 as=0 ps=0
+M1019 C_OUT 2_input_OR_0/OUT GND Gnd CMOSN w=5 l=2
++  ad=40 pd=26 as=0 ps=0
+M1020 GND 2_input_OR_0/B 2_input_OR_0/OUT Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1021 2_input_OR_0/OUT 2_input_OR_0/B 2_input_OR_0/a_n7_22# 2_input_OR_0/w_n23_15# CMOSP w=4 l=2
++  ad=36 pd=26 as=0 ps=0
+M1022 VDD A 2_input_AND_0/OUT 2_input_AND_0/w_n12_9# CMOSP w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1023 2_input_AND_0/a_4_n21# B GND Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1024 2_input_OR_0/B 2_input_AND_0/OUT VDD 2_input_AND_0/w_35_9# CMOSP w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1025 2_input_AND_0/OUT B VDD 2_input_AND_0/w_n12_9# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1026 2_input_OR_0/B 2_input_AND_0/OUT GND Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1027 2_input_AND_0/OUT A 2_input_AND_0/a_4_n21# Gnd CMOSN w=4 l=2
++  ad=32 pd=24 as=0 ps=0
+M1028 VDD AXORB 2_input_AND_1/OUT 2_input_AND_1/w_n12_9# CMOSP w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1029 2_input_AND_1/a_4_n21# C_IN GND Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1030 2_input_OR_0/A 2_input_AND_1/OUT VDD 2_input_AND_1/w_35_9# CMOSP w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1031 2_input_AND_1/OUT C_IN VDD 2_input_AND_1/w_n12_9# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1032 2_input_OR_0/A 2_input_AND_1/OUT GND Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1033 2_input_AND_1/OUT AXORB 2_input_AND_1/a_4_n21# Gnd CMOSN w=4 l=2
++  ad=32 pd=24 as=0 ps=0
+C0 VDD 2_input_OR_0/OUT 0.02fF
+C1 2_input_AND_0/OUT A 0.12fF
+C2 q1d_2_INPUT_XOR_0/w_52_34# A 0.03fF
+C3 2_input_AND_0/w_n12_9# VDD 0.06fF
+C4 GND q1d_2_INPUT_XOR_0/ABAR 0.08fF
+C5 2_input_AND_1/w_n12_9# 2_input_AND_1/OUT 0.03fF
+C6 2_input_OR_0/B 2_input_OR_0/A 0.45fF
+C7 q1d_2_INPUT_XOR_0/ABAR AXORB 0.19fF
+C8 2_input_OR_0/B 2_input_AND_0/w_35_9# 0.03fF
+C9 2_input_OR_0/B VDD 0.12fF
+C10 GND 2_input_OR_0/A 0.44fF
+C11 2_input_OR_0/w_n23_15# 2_input_OR_0/A 0.07fF
+C12 VDD AXORB 0.43fF
+C13 2_input_OR_0/w_30_15# VDD 0.03fF
+C14 2_input_OR_0/w_n23_15# VDD 0.03fF
+C15 q1d_2_INPUT_XOR_0/BBAR VDD 0.03fF
+C16 2_input_AND_1/w_n12_9# C_IN 0.07fF
+C17 C_OUT 2_input_OR_0/OUT 0.05fF
+C18 B A 0.75fF
+C19 q1d_2_INPUT_XOR_0/w_52_34# B 0.09fF
+C20 q1d_2_INPUT_XOR_0/w_12_2# q1d_2_INPUT_XOR_0/BBAR 0.03fF
+C21 q1d_2_INPUT_XOR_0/w_n34_1# A 0.08fF
+C22 GND q1d_2_INPUT_XOR_1/BBAR 0.04fF
+C23 GND 2_input_AND_1/OUT 0.04fF
+C24 2_input_AND_1/OUT AXORB 0.12fF
+C25 GND q1d_2_INPUT_XOR_1/ABAR 0.27fF
+C26 q1d_2_INPUT_XOR_1/ABAR AXORB 0.24fF
+C27 q1d_2_INPUT_XOR_1/w_12_2# VDD 0.03fF
+C28 GND C_OUT 0.07fF
+C29 q1d_2_INPUT_XOR_0/ABAR VDD 0.03fF
+C30 GND C_IN 0.17fF
+C31 C_OUT 2_input_OR_0/w_30_15# 0.03fF
+C32 C_IN AXORB 0.93fF
+C33 2_input_OR_0/A VDD 0.18fF
+C34 2_input_AND_0/w_35_9# VDD 0.03fF
+C35 q1d_2_INPUT_XOR_1/w_52_34# C_IN 0.09fF
+C36 q1d_2_INPUT_XOR_0/w_53_n17# AXORB 0.04fF
+C37 q1d_2_INPUT_XOR_0/w_53_n17# q1d_2_INPUT_XOR_0/BBAR 0.09fF
+C38 GND SUM_A_XOR_B_XOR_C 0.05fF
+C39 SUM_A_XOR_B_XOR_C AXORB 0.18fF
+C40 2_input_AND_0/w_n12_9# 2_input_AND_0/OUT 0.03fF
+C41 SUM_A_XOR_B_XOR_C q1d_2_INPUT_XOR_1/w_52_34# 0.03fF
+C42 2_input_AND_0/w_n12_9# A 0.07fF
+C43 2_input_OR_0/A 2_input_AND_1/w_35_9# 0.03fF
+C44 2_input_OR_0/B 2_input_AND_0/OUT 0.05fF
+C45 VDD 2_input_AND_1/w_35_9# 0.03fF
+C46 GND 2_input_AND_0/OUT 0.04fF
+C47 q1d_2_INPUT_XOR_1/BBAR q1d_2_INPUT_XOR_1/w_12_2# 0.03fF
+C48 q1d_2_INPUT_XOR_0/w_12_2# VDD 0.03fF
+C49 GND A 0.11fF
+C50 A AXORB 0.18fF
+C51 q1d_2_INPUT_XOR_1/w_n34_1# AXORB 0.08fF
+C52 q1d_2_INPUT_XOR_0/w_52_34# AXORB 0.03fF
+C53 2_input_AND_1/OUT 2_input_OR_0/A 0.05fF
+C54 q1d_2_INPUT_XOR_1/BBAR VDD 0.03fF
+C55 2_input_AND_1/OUT VDD 0.06fF
+C56 C_IN q1d_2_INPUT_XOR_1/w_12_2# 0.08fF
+C57 q1d_2_INPUT_XOR_1/ABAR VDD 0.03fF
+C58 C_OUT VDD 0.03fF
+C59 q1d_2_INPUT_XOR_0/w_53_n17# q1d_2_INPUT_XOR_0/ABAR 0.03fF
+C60 C_IN VDD 0.12fF
+C61 2_input_AND_1/OUT 2_input_AND_1/w_35_9# 0.08fF
+C62 2_input_AND_0/w_n12_9# B 0.07fF
+C63 q1d_2_INPUT_XOR_1/BBAR q1d_2_INPUT_XOR_1/w_53_n17# 0.09fF
+C64 q1d_2_INPUT_XOR_1/ABAR q1d_2_INPUT_XOR_1/w_53_n17# 0.03fF
+C65 GND B 0.18fF
+C66 B AXORB 0.15fF
+C67 q1d_2_INPUT_XOR_0/BBAR B 0.03fF
+C68 2_input_AND_0/OUT 2_input_AND_0/w_35_9# 0.08fF
+C69 q1d_2_INPUT_XOR_0/ABAR A 0.11fF
+C70 2_input_AND_0/OUT VDD 0.06fF
+C71 VDD A 0.39fF
+C72 q1d_2_INPUT_XOR_1/w_n34_1# VDD 0.03fF
+C73 q1d_2_INPUT_XOR_1/BBAR C_IN 0.03fF
+C74 2_input_AND_1/w_n12_9# AXORB 0.07fF
+C75 SUM_A_XOR_B_XOR_C q1d_2_INPUT_XOR_1/w_53_n17# 0.04fF
+C76 C_IN q1d_2_INPUT_XOR_1/ABAR 0.51fF
+C77 2_input_OR_0/B 2_input_OR_0/OUT 0.20fF
+C78 GND 2_input_OR_0/OUT 0.15fF
+C79 SUM_A_XOR_B_XOR_C q1d_2_INPUT_XOR_1/ABAR 0.19fF
+C80 2_input_OR_0/w_30_15# 2_input_OR_0/OUT 0.06fF
+C81 2_input_OR_0/w_n23_15# 2_input_OR_0/OUT 0.03fF
+C82 SUM_A_XOR_B_XOR_C C_IN 0.15fF
+C83 q1d_2_INPUT_XOR_0/ABAR B 0.08fF
+C84 q1d_2_INPUT_XOR_1/w_n34_1# q1d_2_INPUT_XOR_1/ABAR 0.03fF
+C85 GND 2_input_OR_0/B 0.16fF
+C86 q1d_2_INPUT_XOR_0/w_n34_1# q1d_2_INPUT_XOR_0/ABAR 0.03fF
+C87 B VDD 0.14fF
+C88 2_input_OR_0/B 2_input_OR_0/w_n23_15# 0.07fF
+C89 GND AXORB 0.33fF
+C90 GND q1d_2_INPUT_XOR_0/BBAR 0.04fF
+C91 q1d_2_INPUT_XOR_0/w_n34_1# VDD 0.03fF
+C92 q1d_2_INPUT_XOR_1/w_52_34# AXORB 0.03fF
+C93 2_input_AND_1/w_n12_9# VDD 0.06fF
+C94 q1d_2_INPUT_XOR_0/w_12_2# B 0.08fF
+C95 2_input_AND_1/OUT Gnd 0.38fF
+C96 AXORB Gnd 3.61fF
+C97 C_IN Gnd 1.60fF
+C98 2_input_AND_1/w_35_9# Gnd 0.56fF
+C99 2_input_AND_1/w_n12_9# Gnd 0.72fF
+C100 2_input_AND_0/OUT Gnd 0.38fF
+C101 A Gnd 3.16fF
+C102 B Gnd 1.52fF
+C103 2_input_AND_0/w_35_9# Gnd 0.56fF
+C104 2_input_AND_0/w_n12_9# Gnd 0.72fF
+C105 GND Gnd 0.66fF
+C106 C_OUT Gnd 0.19fF
+C107 2_input_OR_0/OUT Gnd 0.41fF
+C108 2_input_OR_0/B Gnd 0.52fF
+C109 2_input_OR_0/A Gnd 0.78fF
+C110 2_input_OR_0/w_30_15# Gnd 0.60fF
+C111 2_input_OR_0/w_n23_15# Gnd 0.73fF
+C112 q1d_2_INPUT_XOR_1/ABAR Gnd 0.10fF
+C113 q1d_2_INPUT_XOR_1/BBAR Gnd 0.04fF
+C114 SUM_A_XOR_B_XOR_C Gnd 0.24fF
+C115 q1d_2_INPUT_XOR_1/w_53_n17# Gnd 0.45fF
+C116 q1d_2_INPUT_XOR_1/w_12_2# Gnd 0.04fF
+C117 q1d_2_INPUT_XOR_1/w_n34_1# Gnd 0.08fF
+C118 q1d_2_INPUT_XOR_1/w_52_34# Gnd 0.45fF
+C119 q1d_2_INPUT_XOR_0/ABAR Gnd 0.10fF
+C120 q1d_2_INPUT_XOR_0/BBAR Gnd 0.04fF
+C121 q1d_2_INPUT_XOR_0/w_53_n17# Gnd 0.45fF
+C122 q1d_2_INPUT_XOR_0/w_12_2# Gnd 0.04fF
+C123 q1d_2_INPUT_XOR_0/w_n34_1# Gnd 0.08fF
+C124 q1d_2_INPUT_XOR_0/w_52_34# Gnd 0.45fF
+.tran 1n 500n
+
+
+.control
+run
+set color0 = rgb:f/f/e
+set color1 = white
+plot v(A) v(q1d_2_INPUT_XOR_0/ABAR)+2
+* plot v(A) v(B)+2 v(C_IN)+4 
+* plot v(SUM_A_XOR_B_XOR_C) v(C_OUT)+2 
+* hardcopy image.ps v(node_a) v(node_b)+2 v(node_cout)+4 v(node_sum)+6
+.end
+.endc

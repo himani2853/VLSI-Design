@@ -1,0 +1,24 @@
+tpd                 =  6.98687e-10 input = INPUT_ALU_A0 output = COMPARATOR_OUT_A_GREATERTHAN_B
+tpd                 =  9.69359e-10 input = INPUT_ALU_A0 output = COMPARATOR_A_EQUAL_B_FINAL
+
+tpd                 =  6.98687e-10 input = INPUT_ALU_A1 output = COMPARATOR_OUT_A_GREATERTHAN_B
+tpd                 =  9.69359e-10 input = INPUT_ALU_A1 output = COMPARATOR_A_EQUAL_B_FINAL
+
+tpd                 =  6.98687e-10 input = INPUT_ALU_A2 output = COMPARATOR_OUT_A_GREATERTHAN_B
+tpd                 =  9.69359e-10 input = INPUT_ALU_A2 output = COMPARATOR_A_EQUAL_B_FINAL
+
+tpd                 =  6.98687e-10 input = INPUT_ALU_A3 output = COMPARATOR_OUT_A_GREATERTHAN_B
+tpd                 =  9.69359e-10 input = INPUT_ALU_A3 output = COMPARATOR_A_EQUAL_B_FINAL
+
+tpd                 =  1.02994e-09 input = INPUT_ALU_B0 output = COMPARATOR_A_EQUAL_B_FINAL
+tpd                 =  7.07605e-10 input = INPUT_ALU_B0 output = COMPARATOR_OUT_A_LESSTHAN_B
+
+tpd                 =  1.02994e-09 input = INPUT_ALU_B1 output = COMPARATOR_A_EQUAL_B_FINAL
+tpd                 =  7.07605e-10 input = INPUT_ALU_B1 output = COMPARATOR_OUT_A_LESSTHAN_B
+
+tpd                 =  1.02994e-09 input = INPUT_ALU_B2 output = COMPARATOR_A_EQUAL_B_FINAL
+tpd                 =  7.07605e-10 input = INPUT_ALU_B2 output = COMPARATOR_OUT_A_LESSTHAN_B
+
+tpd                 =  1.02994e-09 input = INPUT_ALU_B3 output = COMPARATOR_A_EQUAL_B_FINAL
+tpd                 =  7.07605e-10 input = INPUT_ALU_B3 output = COMPARATOR_OUT_A_LESSTHAN_B
+

@@ -1,0 +1,391 @@
+* SPICE3 file created from 4_input_adder_subtractor.ext - technology: scmos
+.include TSMC_180nm.txt
+
+
+.param SUPPLY = 1.8
+
+
+.global GND
+
+Vdd VDD GND 'SUPPLY'
+V_in_A0 A0 gnd PULSE(0 1.8 50ns 100ps 100ps 500ns 1000ns)
+V_in_A1 A1 gnd PULSE(0 1.8 100ns 100ps 100ps 500ns 1000ns)
+V_in_A2 A2 gnd PULSE(0 1.8 200ns 100ps 100ps 500ns 1000ns)
+V_in_A3 A3 gnd PULSE(0 1.8 400ns 100ps 100ps 500ns 1000ns)
+V_in_M M gnd DC 0
+V_in_B0 B0 gnd PULSE(0 1.8 50ns 100ps 100ps 500ns 1000ns)
+V_in_B1 B1 gnd PULSE(0 1.8 100ns 100ps 100ps 500ns 1000ns)
+V_in_B2 B2 gnd PULSE(0 1.8 200ns 100ps 100ps 500ns 1000ns)
+V_in_B3 B3 gnd PULSE(0 1.8 400ns 100ps 100ps 500ns 1000ns)
+.option scale=0.09u
+
+M1000 VDD A0 full_adder_0/q1d_2_INPUT_XOR_0/BBAR full_adder_0/q1d_2_INPUT_XOR_0/w_12_2# CMOSP w=4 l=2
++  ad=1568 pd=1240 as=24 ps=20
+M1001 full_adder_0/AXORB full_adder_0/q1d_2_INPUT_XOR_0/BBAR full_adder_0/q1d_2_INPUT_XOR_0/ABAR full_adder_0/q1d_2_INPUT_XOR_0/w_53_n17# CMOSP w=4 l=3
++  ad=76 pd=62 as=44 ps=38
+M1002 full_adder_0/q1d_2_INPUT_XOR_0/BBAR A0 GND Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=1320 ps=1084
+M1003 VDD full_adder_0/A full_adder_0/q1d_2_INPUT_XOR_0/ABAR full_adder_0/q1d_2_INPUT_XOR_0/w_n34_1# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1004 full_adder_0/AXORB A0 full_adder_0/A full_adder_0/q1d_2_INPUT_XOR_0/w_52_34# CMOSP w=4 l=3
++  ad=0 pd=0 as=76 ps=62
+M1005 full_adder_0/q1d_2_INPUT_XOR_0/ABAR full_adder_0/A GND Gnd CMOSN w=4 l=2
++  ad=44 pd=38 as=0 ps=0
+M1006 full_adder_0/AXORB full_adder_0/q1d_2_INPUT_XOR_0/BBAR full_adder_0/A Gnd CMOSN w=4 l=3
++  ad=72 pd=60 as=72 ps=60
+M1007 full_adder_0/AXORB A0 full_adder_0/q1d_2_INPUT_XOR_0/ABAR Gnd CMOSN w=4 l=3
++  ad=0 pd=0 as=0 ps=0
+M1008 VDD M full_adder_0/q1d_2_INPUT_XOR_1/BBAR full_adder_0/q1d_2_INPUT_XOR_1/w_12_2# CMOSP w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1009 S0 full_adder_0/q1d_2_INPUT_XOR_1/BBAR full_adder_0/q1d_2_INPUT_XOR_1/ABAR full_adder_0/q1d_2_INPUT_XOR_1/w_53_n17# CMOSP w=4 l=3
++  ad=52 pd=42 as=44 ps=38
+M1010 full_adder_0/q1d_2_INPUT_XOR_1/BBAR M GND Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1011 VDD full_adder_0/AXORB full_adder_0/q1d_2_INPUT_XOR_1/ABAR full_adder_0/q1d_2_INPUT_XOR_1/w_n34_1# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1012 S0 M full_adder_0/AXORB full_adder_0/q1d_2_INPUT_XOR_1/w_52_34# CMOSP w=4 l=3
++  ad=0 pd=0 as=0 ps=0
+M1013 full_adder_0/q1d_2_INPUT_XOR_1/ABAR full_adder_0/AXORB GND Gnd CMOSN w=4 l=2
++  ad=44 pd=38 as=0 ps=0
+M1014 S0 full_adder_0/q1d_2_INPUT_XOR_1/BBAR full_adder_0/AXORB Gnd CMOSN w=4 l=3
++  ad=48 pd=40 as=0 ps=0
+M1015 S0 M full_adder_0/q1d_2_INPUT_XOR_1/ABAR Gnd CMOSN w=4 l=3
++  ad=0 pd=0 as=0 ps=0
+M1016 full_adder_0/2_input_OR_0/OUT full_adder_0/2_input_OR_0/A GND Gnd CMOSN w=4 l=2
++  ad=40 pd=28 as=0 ps=0
+M1017 full_adder_0/2_input_OR_0/a_n7_22# full_adder_0/2_input_OR_0/A VDD full_adder_0/2_input_OR_0/w_n23_15# CMOSP w=4 l=2
++  ad=40 pd=28 as=0 ps=0
+M1018 C1 full_adder_0/2_input_OR_0/OUT VDD full_adder_0/2_input_OR_0/w_30_15# CMOSP w=5 l=2
++  ad=40 pd=26 as=0 ps=0
+M1019 C1 full_adder_0/2_input_OR_0/OUT GND Gnd CMOSN w=5 l=2
++  ad=40 pd=26 as=0 ps=0
+M1020 GND full_adder_0/2_input_OR_0/B full_adder_0/2_input_OR_0/OUT Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1021 full_adder_0/2_input_OR_0/OUT full_adder_0/2_input_OR_0/B full_adder_0/2_input_OR_0/a_n7_22# full_adder_0/2_input_OR_0/w_n23_15# CMOSP w=4 l=2
++  ad=36 pd=26 as=0 ps=0
+M1022 VDD full_adder_0/A full_adder_0/2_input_AND_0/OUT full_adder_0/2_input_AND_0/w_n12_9# CMOSP w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1023 full_adder_0/2_input_AND_0/a_4_n21# A0 GND Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1024 full_adder_0/2_input_OR_0/B full_adder_0/2_input_AND_0/OUT VDD full_adder_0/2_input_AND_0/w_35_9# CMOSP w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1025 full_adder_0/2_input_AND_0/OUT A0 VDD full_adder_0/2_input_AND_0/w_n12_9# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1026 full_adder_0/2_input_OR_0/B full_adder_0/2_input_AND_0/OUT GND Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1027 full_adder_0/2_input_AND_0/OUT full_adder_0/A full_adder_0/2_input_AND_0/a_4_n21# Gnd CMOSN w=4 l=2
++  ad=32 pd=24 as=0 ps=0
+M1028 VDD full_adder_0/AXORB full_adder_0/2_input_AND_1/OUT full_adder_0/2_input_AND_1/w_n12_9# CMOSP w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1029 full_adder_0/2_input_AND_1/a_4_n21# M GND Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1030 full_adder_0/2_input_OR_0/A full_adder_0/2_input_AND_1/OUT VDD full_adder_0/2_input_AND_1/w_35_9# CMOSP w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1031 full_adder_0/2_input_AND_1/OUT M VDD full_adder_0/2_input_AND_1/w_n12_9# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1032 full_adder_0/2_input_OR_0/A full_adder_0/2_input_AND_1/OUT GND Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1033 full_adder_0/2_input_AND_1/OUT full_adder_0/AXORB full_adder_0/2_input_AND_1/a_4_n21# Gnd CMOSN w=4 l=2
++  ad=32 pd=24 as=0 ps=0
+M1034 VDD full_adder_1/B full_adder_1/q1d_2_INPUT_XOR_0/BBAR full_adder_1/q1d_2_INPUT_XOR_0/w_12_2# CMOSP w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1035 full_adder_1/AXORB full_adder_1/q1d_2_INPUT_XOR_0/BBAR full_adder_1/q1d_2_INPUT_XOR_0/ABAR full_adder_1/q1d_2_INPUT_XOR_0/w_53_n17# CMOSP w=4 l=3
++  ad=76 pd=62 as=44 ps=38
+M1036 full_adder_1/q1d_2_INPUT_XOR_0/BBAR full_adder_1/B GND Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1037 VDD full_adder_1/A full_adder_1/q1d_2_INPUT_XOR_0/ABAR full_adder_1/q1d_2_INPUT_XOR_0/w_n34_1# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1038 full_adder_1/AXORB full_adder_1/B full_adder_1/A full_adder_1/q1d_2_INPUT_XOR_0/w_52_34# CMOSP w=4 l=3
++  ad=0 pd=0 as=76 ps=62
+M1039 full_adder_1/q1d_2_INPUT_XOR_0/ABAR full_adder_1/A GND Gnd CMOSN w=4 l=2
++  ad=44 pd=38 as=0 ps=0
+M1040 full_adder_1/AXORB full_adder_1/q1d_2_INPUT_XOR_0/BBAR full_adder_1/A Gnd CMOSN w=4 l=3
++  ad=72 pd=60 as=72 ps=60
+M1041 full_adder_1/AXORB full_adder_1/B full_adder_1/q1d_2_INPUT_XOR_0/ABAR Gnd CMOSN w=4 l=3
++  ad=0 pd=0 as=0 ps=0
+M1042 VDD C1 full_adder_1/q1d_2_INPUT_XOR_1/BBAR full_adder_1/q1d_2_INPUT_XOR_1/w_12_2# CMOSP w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1043 S1 full_adder_1/q1d_2_INPUT_XOR_1/BBAR full_adder_1/q1d_2_INPUT_XOR_1/ABAR full_adder_1/q1d_2_INPUT_XOR_1/w_53_n17# CMOSP w=4 l=3
++  ad=52 pd=42 as=44 ps=38
+M1044 full_adder_1/q1d_2_INPUT_XOR_1/BBAR C1 GND Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1045 VDD full_adder_1/AXORB full_adder_1/q1d_2_INPUT_XOR_1/ABAR full_adder_1/q1d_2_INPUT_XOR_1/w_n34_1# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1046 S1 C1 full_adder_1/AXORB full_adder_1/q1d_2_INPUT_XOR_1/w_52_34# CMOSP w=4 l=3
++  ad=0 pd=0 as=0 ps=0
+M1047 full_adder_1/q1d_2_INPUT_XOR_1/ABAR full_adder_1/AXORB GND Gnd CMOSN w=4 l=2
++  ad=44 pd=38 as=0 ps=0
+M1048 S1 full_adder_1/q1d_2_INPUT_XOR_1/BBAR full_adder_1/AXORB Gnd CMOSN w=4 l=3
++  ad=48 pd=40 as=0 ps=0
+M1049 S1 C1 full_adder_1/q1d_2_INPUT_XOR_1/ABAR Gnd CMOSN w=4 l=3
++  ad=0 pd=0 as=0 ps=0
+M1050 full_adder_1/2_input_OR_0/OUT full_adder_1/2_input_OR_0/A GND Gnd CMOSN w=4 l=2
++  ad=40 pd=28 as=0 ps=0
+M1051 full_adder_1/2_input_OR_0/a_n7_22# full_adder_1/2_input_OR_0/A VDD full_adder_1/2_input_OR_0/w_n23_15# CMOSP w=4 l=2
++  ad=40 pd=28 as=0 ps=0
+M1052 C2 full_adder_1/2_input_OR_0/OUT VDD full_adder_1/2_input_OR_0/w_30_15# CMOSP w=5 l=2
++  ad=40 pd=26 as=0 ps=0
+M1053 C2 full_adder_1/2_input_OR_0/OUT GND Gnd CMOSN w=5 l=2
++  ad=40 pd=26 as=0 ps=0
+M1054 GND full_adder_1/2_input_OR_0/B full_adder_1/2_input_OR_0/OUT Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1055 full_adder_1/2_input_OR_0/OUT full_adder_1/2_input_OR_0/B full_adder_1/2_input_OR_0/a_n7_22# full_adder_1/2_input_OR_0/w_n23_15# CMOSP w=4 l=2
++  ad=36 pd=26 as=0 ps=0
+M1056 VDD full_adder_1/A full_adder_1/2_input_AND_0/OUT full_adder_1/2_input_AND_0/w_n12_9# CMOSP w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1057 full_adder_1/2_input_AND_0/a_4_n21# full_adder_1/B GND Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1058 full_adder_1/2_input_OR_0/B full_adder_1/2_input_AND_0/OUT VDD full_adder_1/2_input_AND_0/w_35_9# CMOSP w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1059 full_adder_1/2_input_AND_0/OUT full_adder_1/B VDD full_adder_1/2_input_AND_0/w_n12_9# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1060 full_adder_1/2_input_OR_0/B full_adder_1/2_input_AND_0/OUT GND Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1061 full_adder_1/2_input_AND_0/OUT full_adder_1/A full_adder_1/2_input_AND_0/a_4_n21# Gnd CMOSN w=4 l=2
++  ad=32 pd=24 as=0 ps=0
+M1062 VDD full_adder_1/AXORB full_adder_1/2_input_AND_1/OUT full_adder_1/2_input_AND_1/w_n12_9# CMOSP w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1063 full_adder_1/2_input_AND_1/a_4_n21# C1 GND Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1064 full_adder_1/2_input_OR_0/A full_adder_1/2_input_AND_1/OUT VDD full_adder_1/2_input_AND_1/w_35_9# CMOSP w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1065 full_adder_1/2_input_AND_1/OUT C1 VDD full_adder_1/2_input_AND_1/w_n12_9# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1066 full_adder_1/2_input_OR_0/A full_adder_1/2_input_AND_1/OUT GND Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1067 full_adder_1/2_input_AND_1/OUT full_adder_1/AXORB full_adder_1/2_input_AND_1/a_4_n21# Gnd CMOSN w=4 l=2
++  ad=32 pd=24 as=0 ps=0
+M1068 VDD A3 full_adder_3/q1d_2_INPUT_XOR_0/BBAR full_adder_3/q1d_2_INPUT_XOR_0/w_12_2# CMOSP w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1069 full_adder_3/AXORB full_adder_3/q1d_2_INPUT_XOR_0/BBAR full_adder_3/q1d_2_INPUT_XOR_0/ABAR full_adder_3/q1d_2_INPUT_XOR_0/w_53_n17# CMOSP w=4 l=3
++  ad=76 pd=62 as=44 ps=38
+M1070 full_adder_3/q1d_2_INPUT_XOR_0/BBAR A3 GND Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1071 VDD full_adder_3/A full_adder_3/q1d_2_INPUT_XOR_0/ABAR full_adder_3/q1d_2_INPUT_XOR_0/w_n34_1# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1072 full_adder_3/AXORB A3 full_adder_3/A full_adder_3/q1d_2_INPUT_XOR_0/w_52_34# CMOSP w=4 l=3
++  ad=0 pd=0 as=76 ps=62
+M1073 full_adder_3/q1d_2_INPUT_XOR_0/ABAR full_adder_3/A GND Gnd CMOSN w=4 l=2
++  ad=44 pd=38 as=0 ps=0
+M1074 full_adder_3/AXORB full_adder_3/q1d_2_INPUT_XOR_0/BBAR full_adder_3/A Gnd CMOSN w=4 l=3
++  ad=72 pd=60 as=72 ps=60
+M1075 full_adder_3/AXORB A3 full_adder_3/q1d_2_INPUT_XOR_0/ABAR Gnd CMOSN w=4 l=3
++  ad=0 pd=0 as=0 ps=0
+M1076 VDD C3 full_adder_3/q1d_2_INPUT_XOR_1/BBAR full_adder_3/q1d_2_INPUT_XOR_1/w_12_2# CMOSP w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1077 S3 full_adder_3/q1d_2_INPUT_XOR_1/BBAR full_adder_3/q1d_2_INPUT_XOR_1/ABAR full_adder_3/q1d_2_INPUT_XOR_1/w_53_n17# CMOSP w=4 l=3
++  ad=52 pd=42 as=44 ps=38
+M1078 full_adder_3/q1d_2_INPUT_XOR_1/BBAR C3 GND Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1079 VDD full_adder_3/AXORB full_adder_3/q1d_2_INPUT_XOR_1/ABAR full_adder_3/q1d_2_INPUT_XOR_1/w_n34_1# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1080 S3 C3 full_adder_3/AXORB full_adder_3/q1d_2_INPUT_XOR_1/w_52_34# CMOSP w=4 l=3
++  ad=0 pd=0 as=0 ps=0
+M1081 full_adder_3/q1d_2_INPUT_XOR_1/ABAR full_adder_3/AXORB GND Gnd CMOSN w=4 l=2
++  ad=44 pd=38 as=0 ps=0
+M1082 S3 full_adder_3/q1d_2_INPUT_XOR_1/BBAR full_adder_3/AXORB Gnd CMOSN w=4 l=3
++  ad=48 pd=40 as=0 ps=0
+M1083 S3 C3 full_adder_3/q1d_2_INPUT_XOR_1/ABAR Gnd CMOSN w=4 l=3
++  ad=0 pd=0 as=0 ps=0
+M1084 full_adder_3/2_input_OR_0/OUT full_adder_3/2_input_OR_0/A GND Gnd CMOSN w=4 l=2
++  ad=40 pd=28 as=0 ps=0
+M1085 full_adder_3/2_input_OR_0/a_n7_22# full_adder_3/2_input_OR_0/A VDD full_adder_3/2_input_OR_0/w_n23_15# CMOSP w=4 l=2
++  ad=40 pd=28 as=0 ps=0
+M1086 C4 full_adder_3/2_input_OR_0/OUT VDD full_adder_3/2_input_OR_0/w_30_15# CMOSP w=5 l=2
++  ad=64 pd=46 as=0 ps=0
+M1087 C4 full_adder_3/2_input_OR_0/OUT GND Gnd CMOSN w=5 l=2
++  ad=64 pd=46 as=0 ps=0
+M1088 GND full_adder_3/2_input_OR_0/B full_adder_3/2_input_OR_0/OUT Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1089 full_adder_3/2_input_OR_0/OUT full_adder_3/2_input_OR_0/B full_adder_3/2_input_OR_0/a_n7_22# full_adder_3/2_input_OR_0/w_n23_15# CMOSP w=4 l=2
++  ad=36 pd=26 as=0 ps=0
+M1090 VDD full_adder_3/A full_adder_3/2_input_AND_0/OUT full_adder_3/2_input_AND_0/w_n12_9# CMOSP w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1091 full_adder_3/2_input_AND_0/a_4_n21# A3 GND Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1092 full_adder_3/2_input_OR_0/B full_adder_3/2_input_AND_0/OUT VDD full_adder_3/2_input_AND_0/w_35_9# CMOSP w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1093 full_adder_3/2_input_AND_0/OUT A3 VDD full_adder_3/2_input_AND_0/w_n12_9# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1094 full_adder_3/2_input_OR_0/B full_adder_3/2_input_AND_0/OUT GND Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1095 full_adder_3/2_input_AND_0/OUT full_adder_3/A full_adder_3/2_input_AND_0/a_4_n21# Gnd CMOSN w=4 l=2
++  ad=32 pd=24 as=0 ps=0
+M1096 VDD full_adder_3/AXORB full_adder_3/2_input_AND_1/OUT full_adder_3/2_input_AND_1/w_n12_9# CMOSP w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1097 full_adder_3/2_input_AND_1/a_4_n21# C3 GND Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1098 full_adder_3/2_input_OR_0/A full_adder_3/2_input_AND_1/OUT VDD full_adder_3/2_input_AND_1/w_35_9# CMOSP w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1099 full_adder_3/2_input_AND_1/OUT C3 VDD full_adder_3/2_input_AND_1/w_n12_9# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1100 full_adder_3/2_input_OR_0/A full_adder_3/2_input_AND_1/OUT GND Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1101 full_adder_3/2_input_AND_1/OUT full_adder_3/AXORB full_adder_3/2_input_AND_1/a_4_n21# Gnd CMOSN w=4 l=2
++  ad=32 pd=24 as=0 ps=0
+M1102 VDD A2 full_adder_2/q1d_2_INPUT_XOR_0/BBAR full_adder_2/q1d_2_INPUT_XOR_0/w_12_2# CMOSP w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1103 full_adder_2/AXORB full_adder_2/q1d_2_INPUT_XOR_0/BBAR full_adder_2/q1d_2_INPUT_XOR_0/ABAR full_adder_2/q1d_2_INPUT_XOR_0/w_53_n17# CMOSP w=4 l=3
++  ad=76 pd=62 as=44 ps=38
+M1104 full_adder_2/q1d_2_INPUT_XOR_0/BBAR A2 GND Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1105 VDD full_adder_2/A full_adder_2/q1d_2_INPUT_XOR_0/ABAR full_adder_2/q1d_2_INPUT_XOR_0/w_n34_1# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1106 full_adder_2/AXORB A2 full_adder_2/A full_adder_2/q1d_2_INPUT_XOR_0/w_52_34# CMOSP w=4 l=3
++  ad=0 pd=0 as=76 ps=62
+M1107 full_adder_2/q1d_2_INPUT_XOR_0/ABAR full_adder_2/A GND Gnd CMOSN w=4 l=2
++  ad=44 pd=38 as=0 ps=0
+M1108 full_adder_2/AXORB full_adder_2/q1d_2_INPUT_XOR_0/BBAR full_adder_2/A Gnd CMOSN w=4 l=3
++  ad=72 pd=60 as=72 ps=60
+M1109 full_adder_2/AXORB A2 full_adder_2/q1d_2_INPUT_XOR_0/ABAR Gnd CMOSN w=4 l=3
++  ad=0 pd=0 as=0 ps=0
+M1110 VDD C2 full_adder_2/q1d_2_INPUT_XOR_1/BBAR full_adder_2/q1d_2_INPUT_XOR_1/w_12_2# CMOSP w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1111 S2 full_adder_2/q1d_2_INPUT_XOR_1/BBAR full_adder_2/q1d_2_INPUT_XOR_1/ABAR full_adder_2/q1d_2_INPUT_XOR_1/w_53_n17# CMOSP w=4 l=3
++  ad=52 pd=42 as=44 ps=38
+M1112 full_adder_2/q1d_2_INPUT_XOR_1/BBAR C2 GND Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1113 VDD full_adder_2/AXORB full_adder_2/q1d_2_INPUT_XOR_1/ABAR full_adder_2/q1d_2_INPUT_XOR_1/w_n34_1# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1114 S2 C2 full_adder_2/AXORB full_adder_2/q1d_2_INPUT_XOR_1/w_52_34# CMOSP w=4 l=3
++  ad=0 pd=0 as=0 ps=0
+M1115 full_adder_2/q1d_2_INPUT_XOR_1/ABAR full_adder_2/AXORB GND Gnd CMOSN w=4 l=2
++  ad=44 pd=38 as=0 ps=0
+M1116 S2 full_adder_2/q1d_2_INPUT_XOR_1/BBAR full_adder_2/AXORB Gnd CMOSN w=4 l=3
++  ad=48 pd=40 as=0 ps=0
+M1117 S2 C2 full_adder_2/q1d_2_INPUT_XOR_1/ABAR Gnd CMOSN w=4 l=3
++  ad=0 pd=0 as=0 ps=0
+M1118 full_adder_2/2_input_OR_0/OUT full_adder_2/2_input_OR_0/A GND Gnd CMOSN w=4 l=2
++  ad=40 pd=28 as=0 ps=0
+M1119 full_adder_2/2_input_OR_0/a_n7_22# full_adder_2/2_input_OR_0/A VDD full_adder_2/2_input_OR_0/w_n23_15# CMOSP w=4 l=2
++  ad=40 pd=28 as=0 ps=0
+M1120 C3 full_adder_2/2_input_OR_0/OUT VDD full_adder_2/2_input_OR_0/w_30_15# CMOSP w=5 l=2
++  ad=40 pd=26 as=0 ps=0
+M1121 C3 full_adder_2/2_input_OR_0/OUT GND Gnd CMOSN w=5 l=2
++  ad=40 pd=26 as=0 ps=0
+M1122 GND full_adder_2/2_input_OR_0/B full_adder_2/2_input_OR_0/OUT Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1123 full_adder_2/2_input_OR_0/OUT full_adder_2/2_input_OR_0/B full_adder_2/2_input_OR_0/a_n7_22# full_adder_2/2_input_OR_0/w_n23_15# CMOSP w=4 l=2
++  ad=36 pd=26 as=0 ps=0
+M1124 VDD full_adder_2/A full_adder_2/2_input_AND_0/OUT full_adder_2/2_input_AND_0/w_n12_9# CMOSP w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1125 full_adder_2/2_input_AND_0/a_4_n21# A2 GND Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1126 full_adder_2/2_input_OR_0/B full_adder_2/2_input_AND_0/OUT VDD full_adder_2/2_input_AND_0/w_35_9# CMOSP w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1127 full_adder_2/2_input_AND_0/OUT A2 VDD full_adder_2/2_input_AND_0/w_n12_9# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1128 full_adder_2/2_input_OR_0/B full_adder_2/2_input_AND_0/OUT GND Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1129 full_adder_2/2_input_AND_0/OUT full_adder_2/A full_adder_2/2_input_AND_0/a_4_n21# Gnd CMOSN w=4 l=2
++  ad=32 pd=24 as=0 ps=0
+M1130 VDD full_adder_2/AXORB full_adder_2/2_input_AND_1/OUT full_adder_2/2_input_AND_1/w_n12_9# CMOSP w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1131 full_adder_2/2_input_AND_1/a_4_n21# C2 GND Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1132 full_adder_2/2_input_OR_0/A full_adder_2/2_input_AND_1/OUT VDD full_adder_2/2_input_AND_1/w_35_9# CMOSP w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1133 full_adder_2/2_input_AND_1/OUT C2 VDD full_adder_2/2_input_AND_1/w_n12_9# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1134 full_adder_2/2_input_OR_0/A full_adder_2/2_input_AND_1/OUT GND Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1135 full_adder_2/2_input_AND_1/OUT full_adder_2/AXORB full_adder_2/2_input_AND_1/a_4_n21# Gnd CMOSN w=4 l=2
++  ad=32 pd=24 as=0 ps=0
+M1136 VDD B0 q1d_2_INPUT_XOR_0/BBAR q1d_2_INPUT_XOR_0/w_12_2# CMOSP w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1137 full_adder_0/A q1d_2_INPUT_XOR_0/BBAR q1d_2_INPUT_XOR_0/ABAR q1d_2_INPUT_XOR_0/w_53_n17# CMOSP w=4 l=3
++  ad=0 pd=0 as=44 ps=38
+M1138 q1d_2_INPUT_XOR_0/BBAR B0 GND Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1139 VDD M q1d_2_INPUT_XOR_0/ABAR q1d_2_INPUT_XOR_0/w_n34_1# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1140 full_adder_0/A B0 M q1d_2_INPUT_XOR_0/w_52_34# CMOSP w=4 l=3
++  ad=0 pd=0 as=96 ps=80
+M1141 q1d_2_INPUT_XOR_0/ABAR M GND Gnd CMOSN w=4 l=2
++  ad=44 pd=38 as=0 ps=0
+M1142 full_adder_0/A q1d_2_INPUT_XOR_0/BBAR M Gnd CMOSN w=4 l=3
++  ad=0 pd=0 as=96 ps=80
+M1143 full_adder_0/A B0 q1d_2_INPUT_XOR_0/ABAR Gnd CMOSN w=4 l=3
++  ad=0 pd=0 as=0 ps=0
+M1144 VDD B1 q1d_2_INPUT_XOR_1/BBAR q1d_2_INPUT_XOR_1/w_12_2# CMOSP w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1145 full_adder_1/A q1d_2_INPUT_XOR_1/BBAR q1d_2_INPUT_XOR_1/ABAR q1d_2_INPUT_XOR_1/w_53_n17# CMOSP w=4 l=3
++  ad=0 pd=0 as=44 ps=38
+M1146 q1d_2_INPUT_XOR_1/BBAR B1 GND Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1147 VDD M q1d_2_INPUT_XOR_1/ABAR q1d_2_INPUT_XOR_1/w_n34_1# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1148 full_adder_1/A B1 M q1d_2_INPUT_XOR_1/w_52_34# CMOSP w=4 l=3
++  ad=0 pd=0 as=0 ps=0
+M1149 q1d_2_INPUT_XOR_1/ABAR M GND Gnd CMOSN w=4 l=2
++  ad=44 pd=38 as=0 ps=0
+M1150 full_adder_1/A q1d_2_INPUT_XOR_1/BBAR M Gnd CMOSN w=4 l=3
++  ad=0 pd=0 as=0 ps=0
+M1151 full_adder_1/A B1 q1d_2_INPUT_XOR_1/ABAR Gnd CMOSN w=4 l=3
++  ad=0 pd=0 as=0 ps=0
+M1152 VDD B2 q1d_2_INPUT_XOR_2/BBAR q1d_2_INPUT_XOR_2/w_12_2# CMOSP w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1153 full_adder_2/A q1d_2_INPUT_XOR_2/BBAR q1d_2_INPUT_XOR_2/ABAR q1d_2_INPUT_XOR_2/w_53_n17# CMOSP w=4 l=3
++  ad=0 pd=0 as=44 ps=38
+M1154 q1d_2_INPUT_XOR_2/BBAR B2 GND Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1155 VDD M q1d_2_INPUT_XOR_2/ABAR q1d_2_INPUT_XOR_2/w_n34_1# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1156 full_adder_2/A B2 M q1d_2_INPUT_XOR_2/w_52_34# CMOSP w=4 l=3
++  ad=0 pd=0 as=0 ps=0
+M1157 q1d_2_INPUT_XOR_2/ABAR M GND Gnd CMOSN w=4 l=2
++  ad=44 pd=38 as=0 ps=0
+M1158 full_adder_2/A q1d_2_INPUT_XOR_2/BBAR M Gnd CMOSN w=4 l=3
++  ad=0 pd=0 as=0 ps=0
+M1159 full_adder_2/A B2 q1d_2_INPUT_XOR_2/ABAR Gnd CMOSN w=4 l=3
++  ad=0 pd=0 as=0 ps=0
+M1160 VDD B3 q1d_2_INPUT_XOR_3/BBAR q1d_2_INPUT_XOR_3/w_12_2# CMOSP w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1161 full_adder_3/A q1d_2_INPUT_XOR_3/BBAR q1d_2_INPUT_XOR_3/ABAR q1d_2_INPUT_XOR_3/w_53_n17# CMOSP w=4 l=3
++  ad=0 pd=0 as=44 ps=38
+M1162 q1d_2_INPUT_XOR_3/BBAR B3 GND Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1163 VDD M q1d_2_INPUT_XOR_3/ABAR q1d_2_INPUT_XOR_3/w_n34_1# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1164 full_adder_3/A B3 M q1d_2_INPUT_XOR_3/w_52_34# CMOSP w=4 l=3
++  ad=0 pd=0 as=0 ps=0
+M1165 q1d_2_INPUT_XOR_3/ABAR M GND Gnd CMOSN w=4 l=2
++  ad=44 pd=38 as=0 ps=0
+M1166 full_adder_3/A q1d_2_INPUT_XOR_3/BBAR M Gnd CMOSN w=4 l=3
++  ad=0 pd=0 as=0 ps=0
+M1167 full_adder_3/A B3 q1d_2_INPUT_XOR_3/ABAR Gnd CMOSN w=4 l=3
++  ad=0 pd=0 as=0 ps=0
+M1168 VDD M q1d_2_INPUT_XOR_4/BBAR q1d_2_INPUT_XOR_4/w_12_2# CMOSP w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1169 C_FINAL q1d_2_INPUT_XOR_4/BBAR q1d_2_INPUT_XOR_4/ABAR q1d_2_INPUT_XOR_4/w_53_n17# CMOSP w=4 l=3
++  ad=52 pd=42 as=44 ps=38
+M1170 q1d_2_INPUT_XOR_4/BBAR M GND Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1171 VDD C4 q1d_2_INPUT_XOR_4/ABAR q1d_2_INPUT_XOR_4/w_n34_1# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1172 C_FINAL M C4 q1d_2_INPUT_XOR_4/w_52_34# CMOSP w=4 l=3
++  ad=0 pd=0 as=0 ps=0
+M1173 q1d_2_INPUT_XOR_4/ABAR C4 GND Gnd CMOSN w=4 l=2
++  ad=44 pd=38 as=0 ps=0
+M1174 C_FINAL q1d_2_INPUT_XOR_4/BBAR C4 Gnd CMOSN w=4 l=3
++  ad=48 pd=40 as=0 ps=0
+M1175 C_FINAL M q1d_2_INPUT_XOR_4/ABAR Gnd CMOSN w=4 l=3
++  ad=0 pd=0 as=0 ps=0
+C0 C2 GND 7.40fF
+C1 C3 GND 6.23fF
+C2 GND Gnd 5.07fF
+C3 M Gnd 11.91fF
+.tran 1n 800n
+
+
+.control
+run
+set color0 = rgb:f/f/e
+set color1 = white
+plot v(A0) v(A1)+2 v(A2)+4 v(A3)+6 v(M)+8
+plot v(B0) v(B1)+2 v(B2)+4 v(B3)+6
+* plot v(node_c1) v(node_c2)+2 v(node_c3)+4 v(node_c4)+6 v(node_c_final)+8
+plot v(S0) v(S1)+2 v(S2)+4 v(S3)+6 v(C_FINAL)+8
+* hardcopy image.ps v(S0) v(S1)+2 v(S2)+4 v(S3)+6 v(node_c_final)+8
+.end
+.endc

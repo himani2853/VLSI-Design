@@ -1,0 +1,179 @@
+* SPICE3 file created from decoder.ext - technology: scmos
+.include TSMC_180nm.txt
+
+
+.param SUPPLY = 1.8
+
+
+.global GND
+
+Vdd VDD GND 'SUPPLY'
+
+V_in_A0 A0 GND PULSE(0 1.8 0ns 100ps 100ps 60ns 120ns)
+V_in_A1 A1 GND PULSE(0 1.8 0ns 100ps 100ps 80ns 160ns)
+.option scale=0.09u
+
+M1000 VDD A0_BAR 2_input_AND_0/OUT 2_input_AND_0/w_n12_9# CMOSP w=4 l=2
++  ad=396 pd=308 as=24 ps=20
+M1001 2_input_AND_0/a_4_n21# A1_BAR GND Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=252 ps=204
+M1002 A0_BAR_A1_BAR 2_input_AND_0/OUT VDD 2_input_AND_0/w_35_9# CMOSP w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1003 2_input_AND_0/OUT A1_BAR VDD 2_input_AND_0/w_n12_9# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1004 A0_BAR_A1_BAR 2_input_AND_0/OUT GND Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1005 2_input_AND_0/OUT A0_BAR 2_input_AND_0/a_4_n21# Gnd CMOSN w=4 l=2
++  ad=32 pd=24 as=0 ps=0
+M1006 VDD A0 2_input_AND_1/OUT 2_input_AND_1/w_n12_9# CMOSP w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1007 2_input_AND_1/a_4_n21# A1_BAR GND Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1008 A0_A1_BAR 2_input_AND_1/OUT VDD 2_input_AND_1/w_35_9# CMOSP w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1009 2_input_AND_1/OUT A1_BAR VDD 2_input_AND_1/w_n12_9# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1010 A0_A1_BAR 2_input_AND_1/OUT GND Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1011 2_input_AND_1/OUT A0 2_input_AND_1/a_4_n21# Gnd CMOSN w=4 l=2
++  ad=32 pd=24 as=0 ps=0
+M1012 VDD A1 2_input_AND_3/OUT 2_input_AND_3/w_n12_9# CMOSP w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1013 2_input_AND_3/a_4_n21# A0 GND Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1014 A0_A1 2_input_AND_3/OUT VDD 2_input_AND_3/w_35_9# CMOSP w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1015 2_input_AND_3/OUT A0 VDD 2_input_AND_3/w_n12_9# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1016 A0_A1 2_input_AND_3/OUT GND Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1017 2_input_AND_3/OUT A1 2_input_AND_3/a_4_n21# Gnd CMOSN w=4 l=2
++  ad=32 pd=24 as=0 ps=0
+M1018 VDD A1 2_input_AND_2/OUT 2_input_AND_2/w_n12_9# CMOSP w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1019 2_input_AND_2/a_4_n21# A0_BAR GND Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1020 A0_BAR_A1 2_input_AND_2/OUT VDD 2_input_AND_2/w_35_9# CMOSP w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1021 2_input_AND_2/OUT A0_BAR VDD 2_input_AND_2/w_n12_9# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1022 A0_BAR_A1 2_input_AND_2/OUT GND Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1023 2_input_AND_2/OUT A1 2_input_AND_2/a_4_n21# Gnd CMOSN w=4 l=2
++  ad=32 pd=24 as=0 ps=0
+M1024 A0_BAR A0 VDD q1a_NOT_0/w_n12_4# CMOSP w=6 l=2
++  ad=36 pd=24 as=0 ps=0
+M1025 A0_BAR A0 GND Gnd CMOSN w=6 l=2
++  ad=36 pd=24 as=0 ps=0
+M1026 A1_BAR A1 VDD q1a_NOT_1/w_n12_4# CMOSP w=6 l=2
++  ad=36 pd=24 as=0 ps=0
+M1027 A1_BAR A1 GND Gnd CMOSN w=6 l=2
++  ad=36 pd=24 as=0 ps=0
+C0 A0_BAR_A1_BAR A1_BAR 0.07fF
+C1 VDD 2_input_AND_2/OUT 0.06fF
+C2 GND 2_input_AND_2/OUT 0.04fF
+C3 A1_BAR A0 0.57fF
+C4 q1a_NOT_1/w_n12_4# A1 0.07fF
+C5 A1 2_input_AND_3/w_n12_9# 0.07fF
+C6 VDD 2_input_AND_3/w_35_9# 0.03fF
+C7 2_input_AND_3/OUT 2_input_AND_3/w_n12_9# 0.03fF
+C8 2_input_AND_2/w_35_9# VDD 0.03fF
+C9 2_input_AND_1/w_n12_9# A0 0.07fF
+C10 GND A1 0.55fF
+C11 2_input_AND_1/OUT 2_input_AND_1/w_n12_9# 0.03fF
+C12 A0_BAR_A1 2_input_AND_2/OUT 0.05fF
+C13 2_input_AND_3/OUT VDD 0.06fF
+C14 A0_BAR A1 0.59fF
+C15 GND 2_input_AND_3/OUT 0.04fF
+C16 2_input_AND_3/w_35_9# A0_A1 0.03fF
+C17 2_input_AND_1/w_n12_9# A1_BAR 0.07fF
+C18 VDD 2_input_AND_0/w_n12_9# 0.06fF
+C19 2_input_AND_2/w_35_9# A0_BAR_A1 0.03fF
+C20 A0 A1 0.64fF
+C21 2_input_AND_2/w_n12_9# 2_input_AND_2/OUT 0.03fF
+C22 VDD q1a_NOT_1/w_n12_4# 0.05fF
+C23 VDD 2_input_AND_3/w_n12_9# 0.06fF
+C24 A0_BAR 2_input_AND_0/w_n12_9# 0.07fF
+C25 VDD q1a_NOT_0/w_n12_4# 0.08fF
+C26 2_input_AND_0/OUT 2_input_AND_0/w_n12_9# 0.03fF
+C27 2_input_AND_3/OUT A0_A1 0.05fF
+C28 A0_BAR q1a_NOT_0/w_n12_4# 0.04fF
+C29 A1_BAR A1 0.04fF
+C30 2_input_AND_1/w_35_9# A0_A1_BAR 0.03fF
+C31 VDD A0_A1_BAR 0.02fF
+C32 GND A0_A1_BAR 0.05fF
+C33 VDD 2_input_AND_1/w_35_9# 0.03fF
+C34 2_input_AND_2/w_n12_9# A1 0.07fF
+C35 GND VDD 0.20fF
+C36 A0 2_input_AND_3/w_n12_9# 0.07fF
+C37 A0 q1a_NOT_0/w_n12_4# 0.07fF
+C38 VDD 2_input_AND_0/w_35_9# 0.03fF
+C39 2_input_AND_2/w_35_9# 2_input_AND_2/OUT 0.08fF
+C40 VDD A0_BAR 0.32fF
+C41 GND A0_BAR 0.41fF
+C42 VDD 2_input_AND_0/OUT 0.06fF
+C43 2_input_AND_2/OUT A1 0.12fF
+C44 2_input_AND_0/w_n12_9# A1_BAR 0.07fF
+C45 GND 2_input_AND_0/OUT 0.04fF
+C46 2_input_AND_0/OUT 2_input_AND_0/w_35_9# 0.08fF
+C47 VDD A0_BAR_A1_BAR 0.02fF
+C48 GND A0_BAR_A1_BAR 0.05fF
+C49 A0_BAR_A1_BAR 2_input_AND_0/w_35_9# 0.03fF
+C50 VDD A0 0.31fF
+C51 A1_BAR q1a_NOT_1/w_n12_4# 0.04fF
+C52 2_input_AND_0/OUT A0_BAR 0.12fF
+C53 GND A0 0.25fF
+C54 VDD A0_A1 0.02fF
+C55 2_input_AND_1/OUT A0_A1_BAR 0.05fF
+C56 GND A0_A1 0.05fF
+C57 2_input_AND_3/OUT 2_input_AND_3/w_35_9# 0.08fF
+C58 VDD A0_BAR_A1 0.02fF
+C59 2_input_AND_1/OUT 2_input_AND_1/w_35_9# 0.08fF
+C60 2_input_AND_1/OUT VDD 0.06fF
+C61 A0_BAR_A1_BAR 2_input_AND_0/OUT 0.05fF
+C62 GND A0_BAR_A1 0.05fF
+C63 A0_BAR A0 0.04fF
+C64 2_input_AND_1/OUT GND 0.04fF
+C65 A0_BAR_A1_BAR A0 0.02fF
+C66 VDD A1_BAR 1.20fF
+C67 GND A1_BAR 0.20fF
+C68 2_input_AND_3/OUT A1 0.12fF
+C69 2_input_AND_2/w_n12_9# VDD 0.06fF
+C70 2_input_AND_1/OUT A0 0.12fF
+C71 A0_BAR A1_BAR 0.55fF
+C72 2_input_AND_2/w_n12_9# A0_BAR 0.07fF
+C73 VDD 2_input_AND_1/w_n12_9# 0.06fF
+C74 q1a_NOT_1/w_n12_4# Gnd 0.50fF
+C75 q1a_NOT_0/w_n12_4# Gnd 0.50fF
+C76 A0_BAR_A1 Gnd 0.15fF
+C77 2_input_AND_2/OUT Gnd 0.38fF
+C78 2_input_AND_2/w_35_9# Gnd 0.56fF
+C79 2_input_AND_2/w_n12_9# Gnd 0.72fF
+C80 A0_A1 Gnd 0.15fF
+C81 2_input_AND_3/OUT Gnd 0.38fF
+C82 2_input_AND_3/w_35_9# Gnd 0.56fF
+C83 2_input_AND_3/w_n12_9# Gnd 0.72fF
+C84 GND Gnd 2.62fF
+C85 A0_A1_BAR Gnd 0.08fF
+C86 VDD Gnd 3.79fF
+C87 2_input_AND_1/OUT Gnd 0.38fF
+C88 A0 Gnd 2.29fF
+C89 A1_BAR Gnd 0.50fF
+C90 2_input_AND_1/w_35_9# Gnd 0.56fF
+C91 2_input_AND_1/w_n12_9# Gnd 0.72fF
+C92 A0_BAR_A1_BAR Gnd 0.11fF
+C93 2_input_AND_0/OUT Gnd 0.38fF
+C94 A0_BAR Gnd 1.04fF
+C95 2_input_AND_0/w_35_9# Gnd 0.56fF
+C96 2_input_AND_0/w_n12_9# Gnd 0.72fF
+.tran 1n 500n
+.control
+run
+set color0 = rgb:f/f/e
+set color1 = white
+plot v(A0) v(A1)+2 v(A0_BAR_A1_BAR)+4 v(A0_A1_BAR)+6 v(A0_BAR_A1)+8 v(A0_A1)+10
+* plot v(A0_BAR_A1_BAR) v(A0_A1_BAR)+2 v(A0_BAR_A1)+4 v(A0_A1)+6
+* plot v(OUT_FINAL)/
+* hardcopy image.ps v(node_a) v(node_b)+2 v(OUT)+4
+.end
+.endc

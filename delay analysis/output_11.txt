@@ -1,0 +1,45 @@
+tpd                 =  2.39137e-10 input = INPUT_ALU_A0 output = AND_OUTPUT_A0B0
+tpd                 =  2.41310e-10 input = INPUT_ALU_A0 output = AND_OUTPUT_A1B1
+tpd                 =  2.42677e-10 input = INPUT_ALU_A0 output = AND_OUTPUT_A2B2
+tpd                 =  2.45760e-10 input = INPUT_ALU_A0 output = AND_OUTPUT_A3B3
+
+tpd                 =  2.39137e-10 input = INPUT_ALU_A1 output = AND_OUTPUT_A0B0
+tpd                 =  2.41310e-10 input = INPUT_ALU_A1 output = AND_OUTPUT_A1B1
+tpd                 =  2.42677e-10 input = INPUT_ALU_A1 output = AND_OUTPUT_A2B2
+tpd                 =  2.45760e-10 input = INPUT_ALU_A1 output = AND_OUTPUT_A3B3
+
+tpd                 =  2.39137e-10 input = INPUT_ALU_A2 output = AND_OUTPUT_A0B0
+tpd                 =  2.41310e-10 input = INPUT_ALU_A2 output = AND_OUTPUT_A1B1
+tpd                 =  2.42677e-10 input = INPUT_ALU_A2 output = AND_OUTPUT_A2B2
+tpd                 =  2.45760e-10 input = INPUT_ALU_A2 output = AND_OUTPUT_A3B3
+
+tpd                 =  2.39137e-10 input = INPUT_ALU_A3 output = AND_OUTPUT_A0B0
+tpd                 =  2.41310e-10 input = INPUT_ALU_A3 output = AND_OUTPUT_A1B1
+tpd                 =  2.42677e-10 input = INPUT_ALU_A3 output = AND_OUTPUT_A2B2
+tpd                 =  2.45760e-10 input = INPUT_ALU_A3 output = AND_OUTPUT_A3B3
+
+tpd                 =  2.51597e-10 input = INPUT_ALU_B0 output = AND_OUTPUT_A0B0
+tpd                 =  2.31935e-10 input = INPUT_ALU_B0 output = AND_OUTPUT_A1B1
+tpd                 =  2.32888e-10 input = INPUT_ALU_B0 output = AND_OUTPUT_A2B2
+tpd                 =  2.29456e-10 input = INPUT_ALU_B0 output = AND_OUTPUT_A3B3
+
+tpd                 =  2.51597e-10 input = INPUT_ALU_B1 output = AND_OUTPUT_A0B0
+tpd                 =  2.31935e-10 input = INPUT_ALU_B1 output = AND_OUTPUT_A1B1
+tpd                 =  2.32888e-10 input = INPUT_ALU_B1 output = AND_OUTPUT_A2B2
+tpd                 =  2.29456e-10 input = INPUT_ALU_B1 output = AND_OUTPUT_A3B3
+
+tpd                 =  2.51597e-10 input = INPUT_ALU_B2 output = AND_OUTPUT_A0B0
+tpd                 =  2.31935e-10 input = INPUT_ALU_B2 output = AND_OUTPUT_A1B1
+tpd                 =  2.32888e-10 input = INPUT_ALU_B2 output = AND_OUTPUT_A2B2
+tpd                 =  2.29456e-10 input = INPUT_ALU_B2 output = AND_OUTPUT_A3B3
+
+tpd                 =  2.51597e-10 input = INPUT_ALU_B3 output = AND_OUTPUT_A0B0
+tpd                 =  2.31935e-10 input = INPUT_ALU_B3 output = AND_OUTPUT_A1B1
+tpd                 =  2.32888e-10 input = INPUT_ALU_B3 output = AND_OUTPUT_A2B2
+tpd                 =  2.29456e-10 input = INPUT_ALU_B3 output = AND_OUTPUT_A3B3
+
+
+
+
+
+

@@ -1,0 +1,178 @@
+* SPICE3 file created from and_block.ext - technology: scmos
+.include TSMC_180nm.txt
+
+
+.param SUPPLY = 1.8
+
+
+.global GND
+
+Vdd VDD GND 'SUPPLY'
+V_in_A0 A0 gnd DC 1.8
+V_in_A1 A1 gnd DC 0
+V_in_A2 A2 gnd DC 0
+V_in_A3 A3 gnd DC 1.8
+
+* 1001
+* 0111
+* 0001
+
+* V_in_B0 B0 gnd PULSE(0 1.8 50ns 100ps 100ps 50ns 100ns)
+* V_in_B1 B1 gnd PULSE(0 1.8 100ns 100ps 100ps 100ns 200ns)
+* V_in_B2 B2 gnd PULSE(0 1.8 200ns 100ps 100ps 200ns 400ns)
+* V_in_B3 B3 gnd PULSE(0 1.8 400ns 100ps 100ps 500ns 1000ns)
+
+V_in_B0 B0 gnd DC 1.8
+V_in_B1 B1 gnd DC 1.8
+V_in_B2 B2 gnd DC 1.8
+V_in_B3 B3 gnd DC 0
+.option scale=0.09u
+
+M1000 VDD B0 2_input_AND_0/OUT 2_input_AND_0/w_n12_9# CMOSP w=4 l=2
++  ad=336 pd=264 as=24 ps=20
+M1001 2_input_AND_0/a_4_n21# A0 GND Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=192 ps=160
+M1002 A0_B0 2_input_AND_0/OUT VDD 2_input_AND_0/w_35_9# CMOSP w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1003 2_input_AND_0/OUT A0 VDD 2_input_AND_0/w_n12_9# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1004 A0_B0 2_input_AND_0/OUT GND Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1005 2_input_AND_0/OUT B0 2_input_AND_0/a_4_n21# Gnd CMOSN w=4 l=2
++  ad=32 pd=24 as=0 ps=0
+M1006 VDD B1 2_input_AND_1/OUT 2_input_AND_1/w_n12_9# CMOSP w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1007 2_input_AND_1/a_4_n21# A1 GND Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1008 A1_B1 2_input_AND_1/OUT VDD 2_input_AND_1/w_35_9# CMOSP w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1009 2_input_AND_1/OUT A1 VDD 2_input_AND_1/w_n12_9# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1010 A1_B1 2_input_AND_1/OUT GND Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1011 2_input_AND_1/OUT B1 2_input_AND_1/a_4_n21# Gnd CMOSN w=4 l=2
++  ad=32 pd=24 as=0 ps=0
+M1012 VDD B3 2_input_AND_3/OUT 2_input_AND_3/w_n12_9# CMOSP w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1013 2_input_AND_3/a_4_n21# A3 GND Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1014 A3_B3 2_input_AND_3/OUT VDD 2_input_AND_3/w_35_9# CMOSP w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1015 2_input_AND_3/OUT A3 VDD 2_input_AND_3/w_n12_9# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1016 A3_B3 2_input_AND_3/OUT GND Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1017 2_input_AND_3/OUT B3 2_input_AND_3/a_4_n21# Gnd CMOSN w=4 l=2
++  ad=32 pd=24 as=0 ps=0
+M1018 VDD B2 2_input_AND_2/OUT 2_input_AND_2/w_n12_9# CMOSP w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1019 2_input_AND_2/a_4_n21# A2 GND Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1020 A2_B2 2_input_AND_2/OUT VDD 2_input_AND_2/w_35_9# CMOSP w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1021 2_input_AND_2/OUT A2 VDD 2_input_AND_2/w_n12_9# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1022 A2_B2 2_input_AND_2/OUT GND Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1023 2_input_AND_2/OUT B2 2_input_AND_2/a_4_n21# Gnd CMOSN w=4 l=2
++  ad=32 pd=24 as=0 ps=0
+C0 2_input_AND_1/OUT B1 0.12fF
+C1 B0 GND 0.11fF
+C2 2_input_AND_2/w_35_9# VDD 0.03fF
+C3 2_input_AND_1/w_n12_9# 2_input_AND_1/OUT 0.03fF
+C4 GND A0_B0 0.05fF
+C5 A3_B3 VDD 0.02fF
+C6 2_input_AND_0/OUT VDD 0.06fF
+C7 VDD 2_input_AND_2/OUT 0.06fF
+C8 2_input_AND_2/w_n12_9# A2 0.07fF
+C9 A3 B3 0.38fF
+C10 2_input_AND_2/w_n12_9# VDD 0.06fF
+C11 2_input_AND_1/w_35_9# A1_B1 0.03fF
+C12 GND A1_B1 0.05fF
+C13 2_input_AND_3/OUT 2_input_AND_3/w_n12_9# 0.03fF
+C14 A2_B2 2_input_AND_2/w_35_9# 0.03fF
+C15 2_input_AND_3/OUT GND 0.04fF
+C16 A0 B0 0.41fF
+C17 2_input_AND_2/OUT B2 0.12fF
+C18 A3_B3 2_input_AND_3/w_35_9# 0.03fF
+C19 2_input_AND_0/OUT 2_input_AND_0/w_n12_9# 0.03fF
+C20 VDD A0_B0 0.02fF
+C21 A2_B2 2_input_AND_2/OUT 0.05fF
+C22 2_input_AND_0/w_35_9# 2_input_AND_0/OUT 0.08fF
+C23 2_input_AND_2/w_n12_9# B2 0.07fF
+C24 A2 GND 0.05fF
+C25 2_input_AND_1/w_35_9# VDD 0.03fF
+C26 2_input_AND_2/w_35_9# 2_input_AND_2/OUT 0.08fF
+C27 2_input_AND_3/w_n12_9# VDD 0.06fF
+C28 A0 GND 0.05fF
+C29 2_input_AND_3/w_n12_9# B3 0.07fF
+C30 GND B3 0.11fF
+C31 GND B1 0.11fF
+C32 B0 2_input_AND_0/w_n12_9# 0.07fF
+C33 VDD A1_B1 0.02fF
+C34 2_input_AND_3/OUT VDD 0.06fF
+C35 2_input_AND_2/w_n12_9# 2_input_AND_2/OUT 0.03fF
+C36 A1 GND 0.05fF
+C37 2_input_AND_0/w_35_9# A0_B0 0.03fF
+C38 2_input_AND_3/OUT B3 0.12fF
+C39 GND B2 0.11fF
+C40 2_input_AND_1/w_35_9# 2_input_AND_1/OUT 0.08fF
+C41 B0 2_input_AND_0/OUT 0.12fF
+C42 A2_B2 GND 0.05fF
+C43 2_input_AND_1/OUT GND 0.04fF
+C44 2_input_AND_0/OUT A0_B0 0.05fF
+C45 2_input_AND_1/OUT A1_B1 0.05fF
+C46 A3_B3 GND 0.05fF
+C47 2_input_AND_3/OUT 2_input_AND_3/w_35_9# 0.08fF
+C48 2_input_AND_0/OUT GND 0.04fF
+C49 2_input_AND_1/w_n12_9# VDD 0.06fF
+C50 2_input_AND_3/w_n12_9# A3 0.07fF
+C51 2_input_AND_2/OUT GND 0.04fF
+C52 GND A3 0.05fF
+C53 2_input_AND_1/w_n12_9# B1 0.07fF
+C54 A2 B2 0.38fF
+C55 A3_B3 2_input_AND_3/OUT 0.05fF
+C56 A1 B1 0.39fF
+C57 2_input_AND_1/w_n12_9# A1 0.07fF
+C58 VDD 2_input_AND_0/w_n12_9# 0.06fF
+C59 A0 2_input_AND_0/w_n12_9# 0.07fF
+C60 A2_B2 VDD 0.02fF
+C61 2_input_AND_1/OUT VDD 0.06fF
+C62 2_input_AND_3/w_35_9# VDD 0.03fF
+C63 2_input_AND_0/w_35_9# VDD 0.03fF
+C64 GND Gnd 3.30fF
+C65 VDD Gnd 2.90fF
+C66 A2_B2 Gnd 0.11fF
+C67 2_input_AND_2/OUT Gnd 0.38fF
+C68 B2 Gnd 0.11fF
+C69 A2 Gnd 0.26fF
+C70 2_input_AND_2/w_35_9# Gnd 0.56fF
+C71 2_input_AND_2/w_n12_9# Gnd 0.72fF
+C72 A3_B3 Gnd 0.12fF
+C73 2_input_AND_3/OUT Gnd 0.38fF
+C74 B3 Gnd 0.28fF
+C75 A3 Gnd 0.25fF
+C76 2_input_AND_3/w_35_9# Gnd 0.56fF
+C77 2_input_AND_3/w_n12_9# Gnd 0.72fF
+C78 A1_B1 Gnd 0.11fF
+C79 2_input_AND_1/OUT Gnd 0.38fF
+C80 B1 Gnd 0.27fF
+C81 A1 Gnd 0.11fF
+C82 2_input_AND_1/w_35_9# Gnd 0.56fF
+C83 2_input_AND_1/w_n12_9# Gnd 0.72fF
+C84 A0_B0 Gnd 0.12fF
+C85 2_input_AND_0/OUT Gnd 0.38fF
+C86 B0 Gnd 0.29fF
+C87 A0 Gnd 0.26fF
+C88 2_input_AND_0/w_35_9# Gnd 0.56fF
+C89 2_input_AND_0/w_n12_9# Gnd 0.72fF
+.tran 1n 500n
+.control
+run
+set color0 = rgb:f/f/e
+set color1 = white
+plot v(A0) v(A1)+2 v(A2)+4 v(A3)+6 
+plot v(B0) v(B1)+2 v(B2)+4 v(B3)+6
+plot v(A0_B0) v(A1_B1)+2 v(A2_B2)+4 v(A3_B3)+6 
+.end
+.endc

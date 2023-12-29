@@ -1,0 +1,69 @@
+magic
+tech scmos
+timestamp 1699711768
+<< nwell >>
+rect 181 105 270 131
+<< ntransistor >>
+rect 222 30 226 37
+<< ptransistor >>
+rect 222 114 226 121
+<< ndiffusion >>
+rect 214 30 222 37
+rect 226 30 236 37
+<< pdiffusion >>
+rect 215 114 222 121
+rect 226 114 236 121
+<< ndcontact >>
+rect 206 29 214 37
+rect 236 30 244 37
+<< pdcontact >>
+rect 207 114 215 121
+rect 236 114 244 121
+<< polysilicon >>
+rect 222 121 226 126
+rect 222 66 226 114
+rect 222 37 226 61
+rect 222 24 226 30
+<< polycontact >>
+rect -3 69 5 77
+rect 212 61 226 66
+rect 136 1 148 11
+<< metal1 >>
+rect 207 121 215 138
+rect 25 102 36 108
+rect 236 80 244 114
+rect -19 69 -3 77
+rect 236 73 262 80
+rect 139 62 212 66
+rect 142 61 212 62
+rect 236 37 244 73
+rect 27 27 34 32
+rect 206 22 214 29
+rect 136 -7 148 1
+<< m2contact >>
+rect 207 138 215 145
+rect 18 102 25 109
+rect 17 24 27 32
+rect 206 14 214 22
+<< metal2 >>
+rect 156 138 207 145
+rect 156 132 164 138
+rect 0 125 164 132
+rect 0 123 25 125
+rect 18 109 25 123
+rect 17 -6 27 24
+rect 5 -11 35 -6
+rect 206 -11 214 14
+rect 5 -17 214 -11
+use q1d_2_INPUT_XOR  q1d_2_INPUT_XOR_0
+timestamp 1699251415
+transform 1 0 56 0 1 62
+box -56 -62 103 58
+<< labels >>
+rlabel metal1 -15 72 -13 74 3 A
+rlabel metal1 141 -5 143 -3 1 B
+rlabel metal1 167 63 169 65 1 OUT
+rlabel metal2 13 128 15 129 5 VDD
+rlabel metal2 17 -14 19 -13 1 GND
+rlabel metal1 254 75 255 76 1 OUT_FINAL
+<< end >>

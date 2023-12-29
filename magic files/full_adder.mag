@@ -1,0 +1,104 @@
+magic
+tech scmos
+timestamp 1699686506
+<< polycontact >>
+rect -39 96 -34 103
+rect 198 93 205 99
+rect 94 31 103 40
+rect 340 34 345 40
+<< metal1 >>
+rect 34 153 203 160
+rect -14 131 -7 137
+rect 34 130 47 153
+rect 197 137 203 153
+rect 196 131 223 137
+rect -60 96 -39 103
+rect -60 -91 -53 96
+rect 100 93 198 98
+rect 34 52 39 61
+rect 94 -18 103 31
+rect 27 -26 103 -18
+rect 27 -84 35 -26
+rect 128 -81 139 -77
+rect 27 -88 58 -84
+rect -60 -95 60 -91
+rect 135 -185 139 -81
+rect 174 -88 181 93
+rect 332 91 365 96
+rect 267 52 271 60
+rect 340 22 345 34
+rect 239 18 345 22
+rect 239 -81 245 18
+rect 352 -78 370 -74
+rect 239 -85 283 -81
+rect 174 -92 284 -88
+rect 365 -115 370 -78
+rect 149 -120 370 -115
+rect 149 -178 154 -120
+rect 149 -182 171 -178
+rect 135 -189 183 -185
+rect 247 -189 263 -185
+<< m2contact >>
+rect -25 130 -14 138
+rect 34 44 42 52
+rect 48 -53 64 -48
+rect 124 -53 130 -45
+rect 119 -109 126 -101
+rect 267 46 275 52
+rect 270 -50 280 -45
+rect 274 -109 281 -103
+rect 347 -104 357 -97
+rect 160 -159 172 -152
+rect 243 -217 257 -209
+<< metal2 >>
+rect -118 137 -96 154
+rect -118 131 -25 137
+rect -118 74 -96 131
+rect -119 51 -95 74
+rect 423 52 443 150
+rect -118 -48 -96 51
+rect 42 46 267 52
+rect 275 46 443 52
+rect 42 44 275 46
+rect -118 -53 48 -48
+rect 130 -50 270 -45
+rect -118 -153 -96 -53
+rect 423 -97 443 46
+rect 346 -103 347 -97
+rect 126 -109 274 -103
+rect 357 -103 443 -97
+rect -118 -158 160 -153
+rect -118 -159 97 -158
+rect 423 -160 443 -103
+rect 422 -210 443 -160
+rect 257 -216 443 -210
+use q1d_2_INPUT_XOR  q1d_2_INPUT_XOR_0
+timestamp 1699251415
+transform 1 0 17 0 1 91
+box -56 -62 103 58
+use q1d_2_INPUT_XOR  q1d_2_INPUT_XOR_1
+timestamp 1699251415
+transform 1 0 249 0 1 91
+box -56 -62 103 58
+use 2_input_AND  2_input_AND_0
+timestamp 1699478438
+transform 1 0 60 0 1 -81
+box -12 -30 69 33
+use 2_input_AND  2_input_AND_1
+timestamp 1699478438
+transform 1 0 285 0 1 -78
+box -12 -30 69 33
+use 2_input_OR  2_input_OR_0
+timestamp 1699680002
+transform 1 0 183 0 1 -192
+box -23 -24 68 39
+<< labels >>
+rlabel metal1 -51 99 -50 100 1 A
+rlabel metal2 -105 32 -103 35 1 VDD
+rlabel metal2 434 20 435 21 1 GND
+rlabel metal1 98 11 99 12 1 B
+rlabel metal1 161 95 162 96 1 AXORB
+rlabel metal1 342 26 343 27 1 C_IN
+rlabel metal1 362 93 363 94 1 SUM_A_XOR_B_XOR_C
+rlabel metal1 259 -187 260 -186 1 C_OUT
+<< end >>

@@ -1,0 +1,75 @@
+* SPICE3 file created from q1d_2_INPUT_XOR.ext - technology: scmos
+.include TSMC_180nm.txt
+
+
+.param SUPPLY = 1.8
+
+
+.global GND
+
+Vdd VDD GND 'SUPPLY'
+
+V_in_A A GND PULSE(0 1.8 0ns 100ps 100ps 20ns 40ns)
+V_in_B B GND PULSE(0 1.8 0ns 100ps 100ps 40ns 80ns)
+.option scale=0.09u
+
+M1000 VDD B BBAR VDD CMOSP w=4 l=2
++  ad=48 pd=40 as=24 ps=20
+M1001 OUT BBAR ABAR VDD CMOSP w=4 l=3
++  ad=52 pd=42 as=44 ps=38
+M1002 BBAR B GND Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1003 VDD A ABAR VDD CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1004 OUT B A VDD CMOSP w=4 l=3
++  ad=0 pd=0 as=24 ps=20
+M1005 ABAR A GND Gnd CMOSN w=4 l=2
++  ad=44 pd=38 as=0 ps=0
+M1006 OUT BBAR A Gnd CMOSN w=4 l=3
++  ad=48 pd=40 as=24 ps=20
+M1007 OUT B ABAR Gnd CMOSN w=4 l=3
++  ad=0 pd=0 as=0 ps=0
+C0 VDD B 0.09fF
+C1 OUT VDD 0.04fF
+C2 VDD OUT 0.03fF
+C3 VDD A 0.03fF
+C4 BBAR VDD 0.09fF
+C5 VDD ABAR 0.03fF
+C6 B ABAR 0.08fF
+C7 GND ABAR 0.04fF
+C8 VDD VDD 0.03fF
+C9 OUT ABAR 0.19fF
+C10 A ABAR 0.08fF
+C11 VDD VDD 0.03fF
+C12 VDD ABAR 0.03fF
+C13 B VDD 0.08fF
+C14 BBAR VDD 0.03fF
+C15 BBAR VDD 0.03fF
+C16 VDD A 0.08fF
+C17 B GND 0.09fF
+C18 OUT A 0.18fF
+C19 B BBAR 0.03fF
+C20 BBAR GND 0.04fF
+C21 ABAR VDD 0.03fF
+C22 GND Gnd 0.20fF
+C23 ABAR Gnd 0.10fF
+C24 BBAR Gnd 0.04fF
+C25 OUT Gnd 0.25fF
+C26 B Gnd 0.36fF
+C27 VDD Gnd 0.24fF
+C28 A Gnd 2.09fF
+C29 VDD Gnd 0.45fF
+C30 VDD Gnd 0.04fF
+C31 VDD Gnd 0.08fF
+C32 VDD Gnd 0.45fF
+.tran 1n 500n
+
+.control
+run
+set color0 = rgb:f/f/e
+set color1 = white
+plot v(A) v(B)+2 v(OUT)+4
+* plot v(OUT_FINAL)/
+* hardcopy image.ps v(node_a) v(node_b)+2 v(OUT)+4
+.end
+.endc

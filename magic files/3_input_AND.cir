@@ -1,0 +1,44 @@
+* SPICE3 file created from 3_input_AND.ext - technology: scmos
+.include TSMC_180nm.txt
+
+
+.param SUPPLY = 1.8
+
+
+.global GND
+
+Vdd VDD GND 'SUPPLY'
+
+V_in_A A GND PULSE(0 1.8 0ns 100ps 100ps 20ns 40ns)
+V_in_B B GND PULSE(0 1.8 0ns 100ps 100ps 40ns 80ns)
+V_in_C C GND PULSE(0 1.8 0ns 100ps 100ps 40ns 100ns)
+.option scale=0.09u
+
+M1000 OUT C a_6_n22# Gnd CMOSN w=4 l=2
++  ad=28 pd=22 as=24 ps=20
+M1001 a_6_n22# B a_n3_n22# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=28 ps=22
+M1002 OUT C VDD VDD CMOSP w=4 l=2
++  ad=56 pd=44 as=77 ps=62
+M1003 VDD B OUT VDD CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1004 OUT A VDD VDD CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1005 OUT_FINAL OUT VDD VDD CMOSP w=5 l=2
++  ad=30 pd=22 as=0 ps=0
+M1006 a_n3_n22# A GND Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=54 ps=42
+M1007 OUT_FINAL OUT GND Gnd CMOSN w=5 l=2
++  ad=30 pd=22 as=0 ps=0
+
+.tran 1n 500n
+
+.control
+run
+set color0 = rgb:f/f/e
+set color1 = white
+plot v(A) v(B)+2 v(C)+4 v(OUT_FINAL)+6
+* plot v(OUT_FINAL)/
+* hardcopy image.ps v(node_a) v(node_b)+2 v(OUT)+4
+.end
+.endc

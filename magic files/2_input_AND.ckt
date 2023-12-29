@@ -1,0 +1,56 @@
+* SPICE3 file created from NAND.ext - technology: scmos
+.include TSMC_180nm.txt
+
+
+.param SUPPLY = 1.8
+
+
+.global GND
+
+Vdd VDD GND 'SUPPLY'
+
+V_in_A A GND PULSE(0 1.8 0ns 100ps 100ps 20ns 40ns)
+V_in_B B GND PULSE(0 1.8 0ns 100ps 100ps 40ns 80ns)
+
+.option scale=0.09u
+
+M1000 VDD B OUT VDD CMOSP w=4 l=2
++  ad=84 pd=66 as=24 ps=20
+M1001 a_4_n21# A GND Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=48 ps=40
+M1002 OUT_FINAL OUT VDD VDD CMOSP w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1003 OUT A VDD VDD CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1004 OUT_FINAL OUT GND Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1005 OUT B a_4_n21# Gnd CMOSN w=4 l=2
++  ad=32 pd=24 as=0 ps=0
+C0 VDD A 0.07fF
+C1 GND OUT 0.04fF
+C2 OUT_FINAL OUT 0.05fF
+C3 GND A 0.05fF
+C4 VDD OUT 0.06fF
+C5 VDD OUT_FINAL 0.03fF
+C6 VDD B 0.07fF
+C7 VDD VDD 0.03fF
+C8 B GND 0.09fF
+C9 VDD OUT 0.08fF
+C10 B OUT 0.12fF
+C11 B A 0.34fF
+C12 VDD VDD 0.06fF
+C13 OUT_FINAL GND 0.05fF
+C14 VDD OUT 0.03fF
+C15 VDD OUT_FINAL 0.02fF
+
+.tran 1n 500n
+
+.control
+run
+set color0 = rgb:f/f/e
+set color1 = white
+plot v(A) v(B)+2 v(OUT_FINAL)+4
+* plot v(OUT_FINAL)/
+* hardcopy image.ps v(node_a) v(node_b)+2 v(OUT)+4
+.end
+.endc

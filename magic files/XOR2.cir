@@ -1,0 +1,103 @@
+* SPICE3 file created from XOR2.ext - technology: scmos
+.include TSMC_180nm.txt
+
+
+.param SUPPLY = 1.8
+
+
+.global GND
+
+Vdd VDD GND 'SUPPLY'
+
+V_in_A A GND PULSE(0 1.8 0ns 100ps 100ps 60ns 120ns)
+V_in_B B GND PULSE(0 1.8 0ns 100ps 100ps 80ns 160ns)
+.option scale=0.09u
+
+M1000 a_1_n32# A GND Gnd CMOSN w=4 l=2
++  ad=28 pd=22 as=80 ps=72
+M1001 VDD B a_1_7# VDD CMOSP w=4 l=2
++  ad=160 pd=144 as=28 ps=22
+M1002 VDD B a_160_n59# VDD CMOSP w=4 l=2
++  ad=0 pd=0 as=28 ps=22
+M1003 a_160_n59# a_1_7# VDD VDD CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1004 OUT a_160_n59# a_310_n23# Gnd CMOSN w=4 l=2
++  ad=28 pd=22 as=28 ps=22
+M1005 VDD a_1_7# a_164_88# VDD CMOSP w=4 l=2
++  ad=0 pd=0 as=28 ps=22
+M1006 a_310_n23# a_164_88# GND Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1007 a_1_7# A VDD VDD CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1008 OUT a_164_88# VDD VDD CMOSP w=4 l=2
++  ad=28 pd=22 as=0 ps=0
+M1009 a_164_88# a_1_7# a_164_49# Gnd CMOSN w=4 l=2
++  ad=28 pd=22 as=28 ps=22
+M1010 a_160_n59# B a_160_n98# Gnd CMOSN w=4 l=2
++  ad=28 pd=22 as=28 ps=22
+M1011 a_160_n98# a_1_7# GND Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1012 a_164_88# A VDD VDD CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1013 a_164_49# A GND Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1014 a_1_7# B a_1_n32# Gnd CMOSN w=4 l=2
++  ad=28 pd=22 as=0 ps=0
+M1015 VDD a_160_n59# OUT VDD CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+C0 B a_1_7# 2.17fF
+C1 a_160_n59# VDD 0.35fF
+C2 a_160_n59# a_164_88# 1.85fF
+C3 VDD A 0.12fF
+C4 a_160_n59# OUT 0.13fF
+C5 a_160_n59# GND 0.10fF
+C6 VDD a_160_n59# 0.07fF
+C7 VDD a_160_n59# 0.03fF
+C8 a_164_88# VDD 0.19fF
+C9 VDD a_1_7# 0.07fF
+C10 VDD A 0.07fF
+C11 B a_160_n59# 0.13fF
+C12 VDD OUT 0.10fF
+C13 B A 0.59fF
+C14 A a_1_7# 2.10fF
+C15 GND a_164_88# 0.09fF
+C16 VDD VDD 0.12fF
+C17 VDD a_164_88# 0.07fF
+C18 VDD VDD 0.13fF
+C19 VDD VDD 0.12fF
+C20 GND OUT 0.04fF
+C21 VDD OUT 0.03fF
+C22 VDD a_1_7# 0.17fF
+C23 a_164_88# a_1_7# 0.13fF
+C24 VDD A 0.07fF
+C25 B GND 0.31fF
+C26 GND a_1_7# 0.23fF
+C27 B VDD 0.07fF
+C28 VDD a_1_7# 0.07fF
+C29 VDD B 0.07fF
+C30 VDD VDD 0.12fF
+C31 VDD a_164_88# 0.03fF
+C32 VDD a_1_7# 0.03fF
+C33 B Gnd 1.35fF
+C34 OUT Gnd 0.18fF
+C35 a_160_n59# Gnd 1.01fF
+C36 GND Gnd 9.85fF
+C37 a_164_88# Gnd 1.04fF
+C38 VDD Gnd 9.63fF
+C39 a_1_7# Gnd 1.95fF
+C40 A Gnd 0.08fF
+C41 VDD Gnd 0.65fF
+C42 VDD Gnd 0.65fF
+C43 VDD Gnd 0.65fF
+C44 VDD Gnd 0.65fF
+.tran 1n 500n
+.control
+run
+set color0 = rgb:f/f/e
+set color1 = white
+plot v(A) v(B)+2 v(OUT)+4
+* plot v(A0_BAR_A1_BAR) v(A0_A1_BAR)+2 v(A0_BAR_A1)+4 v(A0_A1)+6
+* plot v(OUT_FINAL)/
+* hardcopy image.ps v(node_a) v(node_b)+2 v(OUT)+4
+.end
+.endc

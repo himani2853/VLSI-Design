@@ -1,0 +1,86 @@
+* SPICE3 file created from XNOR.ext - technology: scmos
+.include TSMC_180nm.txt
+
+
+.param SUPPLY = 1.8
+
+
+.global GND
+
+Vdd VDD GND 'SUPPLY'
+
+V_in_A A GND PULSE(0 1.8 0ns 100ps 100ps 60ns 120ns)
+V_in_B B GND PULSE(0 1.8 0ns 100ps 100ps 80ns 160ns)
+.option scale=0.09u
+
+M1000 VDD B q1d_2_INPUT_XOR_0/BBAR VDD CMOSP w=4 l=2
++  ad=153 pd=84 as=24 ps=20
+M1001 OUT q1d_2_INPUT_XOR_0/BBAR q1d_2_INPUT_XOR_0/ABAR VDD CMOSP w=4 l=3
++  ad=52 pd=42 as=44 ps=38
+M1002 q1d_2_INPUT_XOR_0/BBAR B GND Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=160 ps=84
+M1003 VDD A q1d_2_INPUT_XOR_0/ABAR VDD CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1004 OUT B A VDD CMOSP w=4 l=3
++  ad=0 pd=0 as=24 ps=20
+M1005 q1d_2_INPUT_XOR_0/ABAR A GND Gnd CMOSN w=4 l=2
++  ad=44 pd=38 as=0 ps=0
+M1006 OUT q1d_2_INPUT_XOR_0/BBAR A Gnd CMOSN w=4 l=3
++  ad=48 pd=40 as=24 ps=20
+M1007 OUT B q1d_2_INPUT_XOR_0/ABAR Gnd CMOSN w=4 l=3
++  ad=0 pd=0 as=0 ps=0
+M1008 OUT_FINAL OUT VDD VDD CMOSP w=7 l=4
++  ad=126 pd=50 as=0 ps=0
+M1009 OUT_FINAL OUT GND Gnd CMOSN w=7 l=4
++  ad=126 pd=50 as=0 ps=0
+C0 VDD A 0.08fF
+C1 VDD VDD 0.03fF
+C2 OUT A 0.18fF
+C3 GND q1d_2_INPUT_XOR_0/ABAR 0.23fF
+C4 OUT B 0.15fF
+C5 VDD q1d_2_INPUT_XOR_0/ABAR 0.03fF
+C6 VDD A 0.01fF
+C7 OUT VDD 0.03fF
+C8 q1d_2_INPUT_XOR_0/BBAR VDD 0.03fF
+C9 q1d_2_INPUT_XOR_0/BBAR B 0.03fF
+C10 VDD A 0.03fF
+C11 VDD B 0.09fF
+C12 VDD q1d_2_INPUT_XOR_0/ABAR 0.03fF
+C13 OUT VDD 0.13fF
+C14 OUT_FINAL VDD 0.06fF
+C15 OUT VDD 0.04fF
+C16 q1d_2_INPUT_XOR_0/BBAR GND 0.04fF
+C17 GND B 0.09fF
+C18 VDD q1d_2_INPUT_XOR_0/BBAR 0.03fF
+C19 OUT q1d_2_INPUT_XOR_0/ABAR 0.19fF
+C20 VDD VDD 0.03fF
+C21 VDD B 0.08fF
+C22 VDD VDD 0.06fF
+C23 A q1d_2_INPUT_XOR_0/ABAR 0.08fF
+C24 q1d_2_INPUT_XOR_0/BBAR VDD 0.09fF
+C25 VDD q1d_2_INPUT_XOR_0/ABAR 0.03fF
+C26 B q1d_2_INPUT_XOR_0/ABAR 0.08fF
+C27 OUT_FINAL Gnd 0.40fF
+C28 VDD Gnd 2.32fF
+C29 GND Gnd 3.65fF
+C30 q1d_2_INPUT_XOR_0/ABAR Gnd 0.10fF
+C31 q1d_2_INPUT_XOR_0/BBAR Gnd 0.04fF
+C32 OUT Gnd 1.20fF
+C33 B Gnd 0.64fF
+C34 VDD Gnd 3.28fF
+C35 A Gnd 2.32fF
+C36 VDD Gnd 0.45fF
+C37 VDD Gnd 0.04fF
+C38 VDD Gnd 0.08fF
+C39 VDD Gnd 0.45fF
+.tran 1n 500n
+.control
+run
+set color0 = rgb:f/f/e
+set color1 = white
+plot v(A) v(B)+2 v(OUT_FINAL)+4
+* plot v(A0_BAR_A1_BAR) v(A0_A1_BAR)+2 v(A0_BAR_A1)+4 v(A0_A1)+6
+* plot v(OUT_FINAL)/
+* hardcopy image.ps v(node_a) v(node_b)+2 v(OUT)+4
+.end
+.endc

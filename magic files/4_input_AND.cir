@@ -1,0 +1,48 @@
+* SPICE3 file created from 4_input_AND.ext - technology: scmos
+.include TSMC_180nm.txt
+
+
+.param SUPPLY = 1.8
+
+
+.global GND
+
+Vdd VDD GND 'SUPPLY'
+
+V_in_A A GND PULSE(0 1.8 0ns 100ps 100ps 20ns 40ns)
+V_in_B B GND PULSE(0 1.8 0ns 100ps 100ps 40ns 60ns)
+V_in_C C GND PULSE(0 1.8 0ns 100ps 100ps 40ns 80ns)
+V_in_D D GND PULSE(0 1.8 0ns 100ps 100ps 40ns 100ns)
+.option scale=0.09u
+
+M1000 OUT B VDD VDD CMOSP w=6 l=2
++  ad=102 pd=70 as=112 ps=74
+M1001 OUT_FINAL OUT GND Gnd CMOSN w=4 l=2
++  ad=32 pd=24 as=63 ps=46
+M1002 a_10_n29# C a_1_n29# Gnd CMOSN w=7 l=2
++  ad=49 pd=28 as=49 ps=28
+M1003 VDD A OUT VDD CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1004 a_1_n29# B a_n8_n29# Gnd CMOSN w=7 l=2
++  ad=0 pd=0 as=49 ps=28
+M1005 a_n8_n29# A GND Gnd CMOSN w=7 l=2
++  ad=0 pd=0 as=0 ps=0
+M1006 VDD C OUT VDD CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1007 OUT_FINAL OUT VDD VDD CMOSP w=4 l=2
++  ad=32 pd=24 as=0 ps=0
+M1008 OUT D a_10_n29# Gnd CMOSN w=7 l=2
++  ad=49 pd=28 as=0 ps=0
+M1009 OUT D VDD VDD CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+.tran 1n 500n
+
+.control
+run
+set color0 = rgb:f/f/e
+set color1 = white
+plot v(A) v(B)+2 v(C)+4 v(D)+6 v(OUT_FINAL)+8
+* plot v(OUT_FINAL)/
+* hardcopy image.ps v(node_a) v(node_b)+2 v(OUT)+4
+.end
+.endc

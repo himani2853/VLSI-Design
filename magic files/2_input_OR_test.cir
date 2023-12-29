@@ -1,0 +1,36 @@
+* SPICE3 file created from 2_input_OR.ext - technology: scmos
+.include TSMC_180nm.txt
+
+
+.param SUPPLY = 1.8
+
+
+.global GND
+
+Vdd VDD GND 'SUPPLY'
+
+V_in_A A GND DC 1.8
+V_in_B B GND DC 0
+.option scale=0.09u
+
+M1000 OUT A GND Gnd CMOSN w=4 l=2
++  ad=40 pd=28 as=104 ps=74
+M1001 a_n7_22# A VDD w_n23_15# CMOSP w=4 l=2
++  ad=40 pd=28 as=68 ps=48
+M1002 OUT_FINAL OUT VDD w_30_15# CMOSP w=5 l=2
++  ad=40 pd=26 as=0 ps=0
+M1003 OUT_FINAL OUT GND Gnd CMOSN w=5 l=2
++  ad=40 pd=26 as=0 ps=0
+M1004 GND B OUT Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1005 OUT B a_n7_22# w_n23_15# CMOSP w=4 l=2
++  ad=36 pd=26 as=0 ps=0
+.tran 1n 500n
+.control
+run
+set color0 = rgb:f/f/e
+set color1 = white
+plot v(A) v(B)+2 v(OUT_FINAL)+4
+.end
+.endc
+

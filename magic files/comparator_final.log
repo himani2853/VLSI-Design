@@ -1,0 +1,5 @@
+Questionable use of curly braces in "set color1 = {white}"
+    Error: undefined symbol in: "[white]"
+Circuit: * SPICE3 file created from comparator_equal.ext - technology: scmos
+
+Fatal Error: Multiple instances of "Plot"
